@@ -1,5 +1,4 @@
 # scala-biginner
-===========
 
 ## What's this ?
 

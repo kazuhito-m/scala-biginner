@@ -15,6 +15,7 @@ class SampleTest extends Specification {
       capital += ("Japan" -> "Tokyo")
       println(capital("France"))
       capital.size must equalTo(3)
+      capital("France") must equalTo("Paris")
     }
 
   }

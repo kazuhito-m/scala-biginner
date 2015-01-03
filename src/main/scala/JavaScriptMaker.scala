@@ -12,7 +12,9 @@ object JavaScriptMaker {
   def register(f: () => JavaScript) = {
     val name = randomName
     callbacks += name -> f
-    <button onclick={"invokeServeCall('"+name+"')"}>ClickMe</button>
+    // <button onclick={"invokeServeCall('"+name+"')"} >ClickMe</button>
+    // FIXME 仮実装、上のXML、許してくれないみたい。
+    ""
   }
 
 /* 未完成。動きません。

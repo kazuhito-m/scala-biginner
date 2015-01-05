@@ -34,6 +34,12 @@ class SampleTest extends Specification {
       // private のフィールドはやっぱ取得メソッド装備しないと無理か。
     }
 
+    "1_3_3_抽象度の高いコードの例" in {
+      val name = "KazuhitoMiura"
+      val nameHasUpperCase = name.exists(_.isUpper)
+      nameHasUpperCase must equalTo(true)
+    }
+
   }
 
 }

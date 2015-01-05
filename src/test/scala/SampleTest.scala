@@ -1,6 +1,7 @@
 package test.scala
 
 import org.specs2.mutable._
+import scala.collection.immutable.HashMap
 
 /**
  * コップ本のサンプルを書く場所。
@@ -23,6 +24,14 @@ class SampleTest extends Specification {
         if (x == 0) 1 else x * factorial(x - 1)
       val actual = factorial(30)
       actual.toString() must equalTo("265252859812191058636308480000000")
+    }
+
+    "1_3_2_簡潔性の例" in {
+      class MyClass(index: Int, name:String)
+      // オブジェクトを作成してみる。
+      val actual = new MyClass(9,"わたしだ")
+      actual must not equalTo(null)
+      // private のフィールドはやっぱ取得メソッド装備しないと無理か。
     }
 
   }

@@ -40,6 +40,17 @@ class SampleTest extends Specification {
       nameHasUpperCase must equalTo(true)
     }
 
+    "1_3_4_ドキュメント性の例" in {
+      // 冗長にもかけるし…
+      val x:HashMap[Int,String] = new HashMap[Int,String]()
+      // 自明であれば短くもかける。
+      val y = new HashMap[Int, String]()
+      val z: Map[Int, String] = new HashMap()
+      // 申し訳程度の確認
+      y.getClass.getName must equalTo("scala.collection.immutable.HashMap")
+      z.getClass.getName must equalTo("scala.collection.immutable.HashMap")
+    }
+
   }
 
 }

@@ -9,5 +9,8 @@ greetStrings(0) = "Hello"
 greetStrings(1) = ", " 
 greetStrings(2) = "world!\n"  
 
+// greetStringsは「代入不可」だが、要素の(1)には「再度代入可」である証明。
+greetStrings(0) = "Happy!"
+
 for (i <- 0 to 2)
     print(greetStrings(i))

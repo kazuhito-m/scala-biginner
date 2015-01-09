@@ -15,4 +15,4 @@ greetStrings(0) = "Happy!"
 // for (i <- 0 to 2)
 for (i <- (0).to(2)) // こうとも書ける。
     // print(greetStrings(i))
-    Console print greetStrings(i) // これも別の書き方
+    Console print greetStrings.apply(i) // これも別の書き方

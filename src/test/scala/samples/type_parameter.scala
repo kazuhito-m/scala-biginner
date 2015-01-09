@@ -18,3 +18,10 @@ greetStrings.update(2, "Life\n")
 for (i <- (0).to(2)) // こうとも書ける。
     // print(greetStrings(i))
     Console print greetStrings.apply(i) // これも別の書き方
+
+// 配列の作成例
+val numNames = Array("zero","one","two","three")
+val numNames2 = Array.apply("zero","one","two","three")
+
+println(numNames)
+println(numNames2)

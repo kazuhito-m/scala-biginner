@@ -11,6 +11,8 @@ greetStrings(2) = "world!\n"
 
 // greetStringsは「代入不可」だが、要素の(1)には「再度代入可」である証明。
 greetStrings(0) = "Happy!"
+// 上記の書き方が「省略形」を使っており、本当はこちらのほうが「展開系」である、という例。
+greetStrings.update(2, "Life\n")
 
 // for (i <- 0 to 2)
 for (i <- (0).to(2)) // こうとも書ける。

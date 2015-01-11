@@ -23,6 +23,13 @@ class ListTest extends Specification {
       oneTwoThreeFour must equalTo(expected)
     }
 
+    "要素とリストをconsでつないでリストを作成" in {
+      val twoThree = List(2, 3)
+      val oneTwoThree = 1 :: twoThree
+      println(oneTwoThree)
+      oneTwoThree must equalTo(List(1, 2, 3))
+    }
+
   }
 }
 

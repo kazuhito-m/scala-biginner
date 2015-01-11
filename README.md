@@ -8,6 +8,6 @@ To turn off if mastery...
 
 ## author
 
-Kazuhito Miura ( @kazuhito_m )
+Kazuhito Miura ( [@kazuhito_m](https://twitter.com/kazuhito-m) )
 
 

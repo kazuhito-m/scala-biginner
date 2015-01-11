@@ -30,6 +30,12 @@ class ListTest extends Specification {
       oneTwoThree must equalTo(List(1, 2, 3))
     }
 
+    "consとNilでリストを生成する" in {
+      val oneTwoThree = 1 :: 2 :: 3 :: Nil
+      println(oneTwoThree)
+      oneTwoThree must equalTo(List(1, 2, 3))
+    }
+
   }
 }
 

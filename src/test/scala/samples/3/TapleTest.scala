@@ -1,5 +1,4 @@
 import org.specs2.mutable._
-import scala.collection.mutable.Set
 
 /**
  * コップ本のサンプルを書く場所。
@@ -26,9 +25,11 @@ class TapleTest extends Specification {
     }
 
     "ミュータブルな集合の作成・初期化・操作" in {
+      import scala.collection.mutable.Set
       val movieSet = Set("Hitch", "Poltergeist")
       movieSet += "Shrek"
       println(movieSet)
+      movieSet must equalTo(Set("Poltergeist", "Shrek", "Hitch"))
     }
   }
 }

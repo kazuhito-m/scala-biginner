@@ -27,6 +27,8 @@ class TapleTest extends Specification {
     "ミュータブルな集合の作成・初期化・操作" in {
       import scala.collection.mutable.Set
       val movieSet = Set("Hitch", "Poltergeist")
+      // 実際は下のメソッドが呼ばれている。
+      // val movieSet = Set.apply("Hitch", "Poltergeist")
       movieSet += "Shrek"
       println(movieSet)
       movieSet must equalTo(Set("Poltergeist", "Shrek", "Hitch"))

@@ -13,6 +13,16 @@ class TapleTest extends Specification {
       pair._2 must equalTo("Luftballons")
     }
 
+  }
+
+    "コップ本「3.4集合とMapを使う」に載ってるサンプル" should {
+
+    "イミュータブルな集合の作成・初期化・操作" in {
+      var jetSet = Set("Boeing", "Arirbus")
+      jetSet += "Lear"
+      println(jetSet.contains("Cessna"))
+      jetSet.contains("Cessna") must equalTo(false)
+    }
 
   }
 }

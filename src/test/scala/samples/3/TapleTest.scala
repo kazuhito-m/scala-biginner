@@ -50,6 +50,12 @@ class TapleTest extends Specification {
       tresureMap(2) must equalTo("Find big X on ground.")
     }
 
+    "イミュータブルマップの作成・初期化・操作" in {
+      val romanNumeral = Map(
+        1 -> "i" , 2 -> "ii" , 3 -> "iii" , 4 -> "iv" , 5 -> "v"
+      )
+      romanNumeral(4) must equalTo("iv")
+    }
   }
 }
 

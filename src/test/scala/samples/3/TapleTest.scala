@@ -1,4 +1,5 @@
 import org.specs2.mutable._
+import scala.collection.mutable.Set
 
 /**
  * コップ本のサンプルを書く場所。
@@ -15,7 +16,7 @@ class TapleTest extends Specification {
 
   }
 
-    "コップ本「3.4集合とMapを使う」に載ってるサンプル" should {
+  "コップ本「3.4集合とMapを使う」に載ってるサンプル" should {
 
     "イミュータブルな集合の作成・初期化・操作" in {
       var jetSet = Set("Boeing", "Arirbus")
@@ -24,6 +25,11 @@ class TapleTest extends Specification {
       jetSet.contains("Cessna") must equalTo(false)
     }
 
+    "ミュータブルな集合の作成・初期化・操作" in {
+      val movieSet = Set("Hitch", "Poltergeist")
+      movieSet += "Shrek"
+      println(movieSet)
+    }
   }
 }
 

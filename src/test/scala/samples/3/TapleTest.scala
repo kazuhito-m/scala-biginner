@@ -41,6 +41,15 @@ class TapleTest extends Specification {
       hashSet.size must equalTo(2)
     }
 
+    "ミュータブルマップの作成・初期化・操作" in {
+      import scala.collection.mutable.Map
+      val tresureMap = Map[Int, String]()
+      tresureMap += (1 -> "Got to island")
+      tresureMap += (2 -> "Find big X on ground.")
+      tresureMap += (3 -> "Dig.")
+      tresureMap(2) must equalTo("Find big X on ground.")
+    }
+
   }
 }
 

@@ -33,6 +33,14 @@ class TapleTest extends Specification {
       println(movieSet)
       movieSet must equalTo(Set("Poltergeist", "Shrek", "Hitch"))
     }
+
+    "集合クラスを具体的に指定したい場合" in {
+      import scala.collection.immutable.HashSet
+      val hashSet = HashSet("Tomatoes", "Chileies")
+      println(hashSet + "Coriander")
+      hashSet.size must equalTo(2)
+    }
+
   }
 }
 

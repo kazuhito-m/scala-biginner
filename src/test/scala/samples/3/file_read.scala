@@ -56,6 +56,6 @@ object file_read {
       }
     }
     else
-      Console.err.println("Prease enter filename")
+      Console.err.println("Please enter filename")
   }
 }

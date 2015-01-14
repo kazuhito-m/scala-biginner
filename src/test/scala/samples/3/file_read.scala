@@ -2,11 +2,10 @@ import scala.io.Source
 
 /**
  * ファイルからテキストを読み込む例。
- *
  */
 object file_read {
   /**
-     * コップ本3.6ファイルがあら行を読み出すの例。
+   * コップ本3.6ファイルがあら行を読み出すの例。
    * @param args
    */
   def main(args: Array[String]): Unit = {
@@ -43,7 +42,7 @@ object file_read {
       val lines = Source.fromFile(args(0)).getLines().toList
       // linesに格納されている文字列中「一番長いもの」の文字列を取得。
       val longsLine = lines.reduceLeft(
-        (a,b) => if (a.length > b.length) a else b
+        (a, b) => if (a.length > b.length) a else b
       )
       // 一番長かった文字列の文字数を取得。
       val maxLength = widthOfLength(longsLine)

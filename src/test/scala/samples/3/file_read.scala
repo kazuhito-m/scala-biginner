@@ -35,7 +35,7 @@ object file_read {
   def widthOfLength(s: String) = s.length.toString.length
 
   /**
-   * 一つ目の例。
+   * 二つ目の例。
    * @param args
    */
   def fileRead02(args: Array[String]): Unit = {

@@ -29,6 +29,24 @@ class ClassAndObjectTest extends Specification {
 
     }
 
+    "ChecksumAccumlatorクラスの中間形" in {
+
+      class ChecksumAccumlator {
+        private var sum = 0
+        def add(b:Byte): Unit = sum += b
+        def checksum(): Int = ~(sum & 0xFF) + 1
+      }
+
+      val acc = new ChecksumAccumlator()
+
+      acc.add(1)
+      acc.add(2)
+      acc.add(3)
+
+      // それは参照したときに違うもの。
+      acc.checksum() must equalTo(-6)
+
+    }
   }
 }
 

@@ -14,16 +14,4 @@ class PrimitiveTest extends Specification {
 
   }
 
-  "算術演算子例" in {
-
-    // Doubleに成る場合
-    val value1 = 1.2 + 2.3
-    value1 must equalTo(Double.box(3.5d))
-
-    // Intに成る場合
-    val value2 = 3 - 1
-    value2 must equalTo(Int.box(2))
-
-  }
-
 }

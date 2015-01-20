@@ -69,6 +69,11 @@ class OperatorTest extends Specification {
       value2 must equalTo(Int.box(3))
     }
 
+    "演算子を二重にカマス例" in {
+      val value = 1 + -3
+      -value must equalTo(Int.box(2))
+    }
+
   }
 
 }

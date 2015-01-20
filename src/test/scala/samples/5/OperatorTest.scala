@@ -52,4 +52,14 @@ class OperatorTest extends Specification {
 
   }
 
+  "単項前置演算子" should {
+    "unary_-メソッドの例" in {
+      val value = 1 + -3
+      value must equalTo(Int.box(-2))
+      // 前置演算子を自分で書く例。
+      val value2 = 1 + 3.unary_-
+      value2 must equalTo(Int.box(-2))
+    }
+  }
+
 }

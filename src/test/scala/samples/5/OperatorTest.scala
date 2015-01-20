@@ -60,6 +60,15 @@ class OperatorTest extends Specification {
       val value2 = 1 + 3.unary_-
       value2 must equalTo(Int.box(-2))
     }
+
+    "unary_+メソッドの例" in {
+      val value = +3
+      value must equalTo(Int.box(3))
+      // 前置演算子を自分で書く例。
+      val value2 = 3.unary_+
+      value2 must equalTo(Int.box(3))
+    }
+
   }
 
 }

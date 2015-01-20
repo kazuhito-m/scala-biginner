@@ -29,4 +29,14 @@ class OperatorTest  extends Specification {
     value must equalTo(Int.box(3))
   }
 
+  "Floatの除算の場合" in {
+    val value = 11.0f / 4.0f
+    value must equalTo(Float.box(2.75f))
+  }
+
+  "小数点の除算だがDoubleになる場合" in {
+    val value = 11.0 % 4.0
+    value must equalTo(Double.box(3.0))
+  }
+
 }

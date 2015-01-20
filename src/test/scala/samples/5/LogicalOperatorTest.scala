@@ -51,7 +51,6 @@ class LogicalOperatorTest extends Specification {
       question must equalTo(true)
     }
 
-
     "論理積" in {
       val toBe = true
       toBe must equalTo(true)

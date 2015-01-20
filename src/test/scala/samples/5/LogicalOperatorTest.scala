@@ -39,6 +39,26 @@ class LogicalOperatorTest extends Specification {
       value must equalTo(false)
     }
 
+  }
+
+  "論理演算子" should {
+
+    "論理和" in {
+      val toBe = true
+      toBe must equalTo(true)
+      // or条件
+      val question = toBe || !toBe
+      question must equalTo(true)
+    }
+
+
+    "論理積" in {
+      val toBe = true
+      toBe must equalTo(true)
+      // or条件
+      val paradox = toBe && !toBe
+      paradox must equalTo(false)
+    }
 
   }
 

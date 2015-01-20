@@ -43,4 +43,13 @@ class OperatorTest extends Specification {
 
   }
 
+  "特殊な演算" should {
+
+    "IEEE754による計算" in {
+      val value = Math.IEEEremainder(11.0, 4.0)
+      value must equalTo(Double.box(-1.0))
+    }
+
+  }
+
 }

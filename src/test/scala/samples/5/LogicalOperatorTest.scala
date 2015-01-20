@@ -22,6 +22,24 @@ class LogicalOperatorTest extends Specification {
       value2 must equalTo(true)
     }
 
+    "含むの不等号の比較" in {
+      val value = 1.0 <= 1.0
+      value must equalTo(true)
+      val value2 = 3.5f >= 3.6f
+      value2 must equalTo(false)
+    }
+
+    "文字型での比較" in {
+      val value = 'a' >= 'A'
+      value must equalTo(true)
+    }
+
+    "否定の論理演算子" in {
+      val value = !true
+      value must equalTo(false)
+    }
+
+
   }
 
 }

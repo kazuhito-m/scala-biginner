@@ -8,6 +8,8 @@ class EqualOperatorTest extends Specification {
 
     "等号と不等号" in {
       1 == 2 must equalTo(false)
+      1 != 2 must equalTo(true)
+      2 == 2 must equalTo(true)
     }
 
   }

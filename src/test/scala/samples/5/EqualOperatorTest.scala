@@ -14,6 +14,7 @@ class EqualOperatorTest extends Specification {
 
     "オブジェクトの比較での等号" in {
       List(1, 2, 3) == List(4, 5, 6) must equalTo(false)
+      List(1, 2, 3) == List(1, 2, 3) must equalTo(true)
     }
 
   }

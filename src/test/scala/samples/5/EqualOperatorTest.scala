@@ -22,6 +22,15 @@ class EqualOperatorTest extends Specification {
       List(1, 2, 3) == "文字" must equalTo(false)
     }
 
+    "nullの比較も可能" in {
+      List(1, 2, 3) == null must equalTo(false)
+      null == List(1, 2, 3) must equalTo(false)
+    }
+
+    "参照でなく等価かをチェックする例(nullチェック不要)" in {
+      ("he" + "llo") == "hello" must equalTo(true)
+    }
+
   }
 
 }

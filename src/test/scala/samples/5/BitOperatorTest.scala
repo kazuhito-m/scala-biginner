@@ -13,6 +13,18 @@ class BitOperatorTest extends Specification {
       ~1 must equalTo(Int.box(-2))
     }
 
+    "右ビットシフトでIntの再下位まで移動(シフトしたところに１を入れていく)" in {
+      -1 >> 31 must equalTo(Int.box(-1))
+    }
+
+    "右ビットシフトでIntの再下位まで移動(シフトしたところに0を入れていく)" in {
+      -1 >>> 31 must equalTo(Int.box(+1))
+    }
+
+    "左ビットシフトでIntで2bitシフト移動(シフトしたところに0を入れていく)" in {
+      1 << 2 must equalTo(Int.box(4))
+    }
+
   }
 
 }

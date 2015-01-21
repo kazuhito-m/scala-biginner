@@ -17,6 +17,11 @@ class EqualOperatorTest extends Specification {
       List(1, 2, 3) == List(1, 2, 3) must equalTo(true)
     }
 
+    "型の違うオブジェクトでも比較が可能" in {
+      1L == 1.0D must equalTo(true)
+      List(1, 2, 3) == "文字" must equalTo(false)
+    }
+
   }
 
 }

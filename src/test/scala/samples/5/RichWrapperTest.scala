@@ -34,6 +34,10 @@ class RichWrapperTest extends Specification {
       (1.0 / 0).isInfinity must equalTo(true)
     }
 
+    "範囲の扱い" in {
+      (4 to 6).toList must equalTo(List(4 , 5 ,6))
+    }
+
   }
 
 }

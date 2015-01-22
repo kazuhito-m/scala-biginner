@@ -2,27 +2,33 @@ package samples
 
 import org.specs2.mutable.Specification
 
-class OperatorsPrecedenceTest extends Specification {
+class EqualOperatorTest extends Specification {
 
-  "演算子の優先順位" should {
+  "オブジェクトの等価性" should {
 
-    "和と積" in {
-      (2 + 2) * 7 must equalTo(28)
+    "等号と不等号" in {
+      1 == 2 must equalTo(false)
+      1 != 2 must equalTo(true)
+      2 == 2 must equalTo(true)
     }
 
-    "不等号始まりよりプラマイの方が優先される" in {
-      2 << 2 + 2 must equalTo(32)
+    "オブジェクトの比較での等号" in {
+      List(1, 2, 3) == List(4, 5, 6) must equalTo(false)
+      List(1, 2, 3) == List(1, 2, 3) must equalTo(true)
     }
 
-    "不等号始まりよりプラマイの方が優先されるその２" in {
-      2 + 2 << 2 must equalTo(16)
+    "型の違うオブジェクトでも比較が可能" in {
+      1L == 1.0D must equalTo(true)
+      List(1, 2, 3) == "文字" must equalTo(false)
     }
 
-    "代入演算子は比較演算子より優先度は低くなる" in {
-      val y = 3
-      var x = 4
-      x *= y + 1
-      x must equalTo(16)
+    "nullの比較も可能" in {
+      List(1, 2, 3) == null must equalTo(false)
+      null == List(1, 2, 3) must equalTo(false)
+    }
+
+    "参照でなく等価かをチェックする例(nullチェック不要)" in {
+      ("he" + "llo") == "hello" must equalTo(true)
     }
 
   }

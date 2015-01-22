@@ -10,6 +10,10 @@ class OperatorsPrecedenceTest extends Specification {
       (2 + 2) * 7 must equalTo(28)
     }
 
+    "不等号始まりよりプラマイの方が優先される" in {
+      2 << 2 + 2 must equalTo(32)
+    }
+
   }
 
 }

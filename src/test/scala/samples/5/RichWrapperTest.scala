@@ -42,7 +42,12 @@ class RichWrapperTest extends Specification {
       ("bob" capitalize) must equalTo("Bob")
       ("bob").capitalize must equalTo("Bob")
     }
-    
+
+    "先頭文字削り" in {
+      "robert" drop 2 must equalTo("bert")
+      "robert".drop(2) must equalTo("bert")
+    }
+
   }
 
 }

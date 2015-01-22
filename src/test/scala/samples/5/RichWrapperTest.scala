@@ -38,6 +38,11 @@ class RichWrapperTest extends Specification {
       (4 to 6).toList must equalTo(List(4 , 5 ,6))
     }
 
+    "アメリカンな名前変換則(頭文字を大文字にする)" in {
+      ("bob" capitalize) must equalTo("Bob")
+      ("bob").capitalize must equalTo("Bob")
+    }
+    
   }
 
 }

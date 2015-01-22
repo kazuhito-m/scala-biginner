@@ -14,6 +14,10 @@ class OperatorsPrecedenceTest extends Specification {
       2 << 2 + 2 must equalTo(32)
     }
 
+    "不等号始まりよりプラマイの方が優先されるその２" in {
+      2 + 2 << 2 must equalTo(16)
+    }
+
   }
 
 }

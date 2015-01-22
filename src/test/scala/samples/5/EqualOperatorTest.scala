@@ -18,6 +18,13 @@ class OperatorsPrecedenceTest extends Specification {
       2 + 2 << 2 must equalTo(16)
     }
 
+    "代入演算子は比較演算子より優先度は低くなる" in {
+      val y = 3
+      var x = 4
+      x *= y + 1
+      x must equalTo(16)
+    }
+
   }
 
 }

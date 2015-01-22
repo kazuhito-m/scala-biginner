@@ -25,6 +25,15 @@ class RichWrapperTest extends Specification {
       (1.51 round) must equalTo(2)
     }
 
+    "ゼロ割（無限）判定" in {
+      // 無限に鳴らない例
+      (1.5 isInfinity) must equalTo(false)
+      1.5.isInfinity must equalTo(false)
+      // ゼロ割の例
+      ((1.0 / 0) isInfinity) must equalTo(true)
+      (1.0 / 0).isInfinity must equalTo(true)
+    }
+
   }
 
 }

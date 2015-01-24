@@ -4,15 +4,6 @@ import org.specs2.mutable.Specification
 
 class RationalTest extends Specification {
 
-  /**
-   * 標準出力をMockingsするためのトレイト。
-   */
-  trait MockOutput extends Output {
-    var lastOut:String = ""
-    override def output(s: String) = {lastOut = s ; println("parameter is:'" + lastOut + "'")}
-  }
-
-
   "Rationalクラスのテスト" should {
 
     "まずは作れること" in {

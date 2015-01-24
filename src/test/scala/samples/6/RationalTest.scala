@@ -7,7 +7,7 @@ class RationalTest extends Specification {
   "Rationalクラスのテスト" should {
 
     "まずは作れること" in {
-      val oneThirds = new Rational(1,2)
+      val oneThirds = new Rational(1, 2)
       oneThirds must not(equalTo(null))
     }
 
@@ -17,11 +17,21 @@ class RationalTest extends Specification {
       Console.setOut(stream)
 
       // 作成
-      val sut = new Rational(1,2)
+      val sut = new Rational(1, 2)
 
       // 標準出力をアサーション
-      val actual = stream.toString ; stream.close()
+      val actual = stream.toString;
+      stream.close()
       actual must equalTo("Created 1 / 2\n")
+    }
+
+  }
+
+  "機能拡張と整理" should {
+
+    "分数のメッセージ自体は内部のメソッドによって作られることにする" in {
+      val sut = new Rational(1, 2)
+      sut.toString must equalTo("1 / 2")
     }
 
   }

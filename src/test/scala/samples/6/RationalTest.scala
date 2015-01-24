@@ -48,13 +48,19 @@ class RationalTest extends Specification {
   "フィールドの追加(6.5の内容)" should {
 
     "Rationalオブジェクト同士を追加できる" in {
-      val a = new Rational(1,2)
-      val b = new Rational(3,4)
+      val a = new Rational(1, 2)
+      val b = new Rational(3, 4)
 
       val sut = a add b
 
       sut must not beNull
 
+    }
+
+    "コンストラクタに放り込んだ値がフィールドとして参照できる" in {
+      val sut = new Rational(2, 3)
+      sut.numer must equalTo(2)
+      sut.denom must equalTo(2)
     }
 
   }

@@ -8,8 +8,8 @@ class RationalTest extends Specification {
   "Rationalクラスのテスト" should {
 
     "まずは作れること" in {
-      val oneThirds = new Rational(1, 2)
-      oneThirds must not(equalTo(null))
+      val sut = new Rational(1, 2)
+      sut must not(equalTo(null))
     }
 
     "標準出力に出力していること" in {
@@ -21,8 +21,7 @@ class RationalTest extends Specification {
       val sut = new Rational(1, 2)
 
       // 標準出力をアサーション
-      val actual = stream.toString;
-      stream.close()
+      val actual = stream.toString; stream.close()
       actual must equalTo("Created 1 / 2\n")
     }
 

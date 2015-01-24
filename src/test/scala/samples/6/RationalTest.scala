@@ -60,7 +60,7 @@ class RationalTest extends Specification {
     "コンストラクタに放り込んだ値がフィールドとして参照できる" in {
       val sut = new Rational(2, 3)
       sut.numer must equalTo(2)
-      sut.denom must equalTo(2)
+      sut.denom must equalTo(3)
     }
 
   }

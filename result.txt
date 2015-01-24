@@ -1,0 +1,181 @@
+[0m[[0minfo[0m] [0mLoading project definition from /home/kazuhito/git/scala-biginner/project[0m
+[0m[[0minfo[0m] [0mSet current project to scala-biginner (in build file:/home/kazuhito/git/scala-biginner/)[0m
+List(1, 2, 3)
+List(1, 2, 3)
+List(1, 2) and List(3, 4) were not mutated.
+Thus, List(1, 2, 3, 4) is a new list.
+Created 1 / 2
+[0m[[0minfo[0m] [0mRationalTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mRationalクラスのテスト should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m まずは作れること[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification RationalTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 60 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mListTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mコップ本「3.2リストを使う」に載ってるサンプル should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 単純なリストの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m リスト同士の連結[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 要素とリストをconsでつないでリストを作成[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m consとNilでリストを生成する[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification ListTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 65 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m4 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mBitOperatorTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mビットシフト演算子 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ビット単位の比較演算[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 右ビットシフトでIntの再下位まで移動(シフトしたところに１を入れていく)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 右ビットシフトでIntの再下位まで移動(シフトしたところに0を入れていく)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 左ビットシフトでIntで2bitシフト移動(シフトしたところに0を入れていく)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification BitOperatorTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 66 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m4 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mOperatorsPrecedenceTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m演算子の優先順位 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 和と積[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 不等号始まりよりプラマイの方が優先される[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 不等号始まりよりプラマイの方が優先されるその２[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 代入演算子は比較演算子より優先度は低くなる[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification OperatorsPrecedenceTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 66 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m4 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mClassAndObjectTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mオブジェクトとその上に乗っているフィールドは編集可不可が違う should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m オブジェクト二つ作って比較[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ChecksumAccumlatorクラスの中間形[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ChecksumAccumlatorクラスの最終形[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification ClassAndObjectTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 66 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m3 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mOperatorTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m演算子とその演算で決まる左辺型 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Doubleに成る場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Intに成る場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Longになる場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Intで除算の場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Intで剰余算の場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Floatの除算の場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 小数点の除算だがDoubleになる場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m特殊な演算 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m IEEE754による計算[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m単項前置演算子 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m unary_-メソッドの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m unary_+メソッドの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 演算子を二重にカマス例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification OperatorTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 67 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m11 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mPrintArgsTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mコップ本「3.5関数型のスタイルが見分ける」に載ってるサンプル should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 関数型アプローチになるとテストできるのでテストする[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification PrintArgsTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 60 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mRichWrapperTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mリッチラッパー should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 最大と最小[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 絶対値[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 四捨五入？[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ゼロ割（無限）判定[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 範囲の扱い[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m アメリカンな名前変換則(頭文字を大文字にする)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 先頭文字削り[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification RichWrapperTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 65 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m7 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mPrimitiveTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m プリミティブ型のメソッドの扱いについての色々[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification PrimitiveTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 0 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
+Paris
+[0m[[0minfo[0m] [0mSingletonObjectTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ChecksumAccumlatorクラスとChecksumAccumlatorシングルトンオブジェクト[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification SingletonObjectTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 1 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
+false
+Set(Chileies, Tomatoes, Coriander)
+Set(Poltergeist, Shrek, Hitch)
+[0m[[0minfo[0m] [0mSampleTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m本の序盤に載ってるサンプル should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 1_1_マップの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 1_1_1_BigIntの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 1_3_2_簡潔性の例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 1_3_3_抽象度の高いコードの例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 1_3_4_ドキュメント性の例[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification SampleTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 10 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m5 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mEqualOperatorTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mオブジェクトの等価性 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 等号と不等号[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m オブジェクトの比較での等号[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 型の違うオブジェクトでも比較が可能[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m nullの比較も可能[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 参照でなく等価かをチェックする例(nullチェック不要)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification EqualOperatorTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 6 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m5 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mTapleTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mコップ本「3.2タプルを使う」に載ってるサンプル should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m タプルを作って使う[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37mコップ本「3.4集合とMapを使う」に載ってるサンプル should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m イミュータブルな集合の作成・初期化・操作[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ミュータブルな集合の作成・初期化・操作[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 集合クラスを具体的に指定したい場合[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m ミュータブルマップの作成・初期化・操作[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m イミュータブルマップの作成・初期化・操作[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification TapleTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 1 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m6 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mLogicalOperatorTest[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m関係演算子 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 不等号の比較[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 不等号の比較その２[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 含むの不等号の比較[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 文字型での比較[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 否定の論理演算子[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m論理演算子 should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 論理和[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m 論理積[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification LogicalOperatorTest[0m
+[0m[[0minfo[0m] [0m[36mFinished in 4 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m7 examples, 0 failure, 0 error[0m[0m
+[0m[[0minfo[0m] [0mScalaTest[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 1 second, 976 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 0[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 0, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[33mNo tests were executed.[0m[0m
+[0m[[0minfo[0m] [0mPassed: Total 60, Failed 0, Errors 0, Passed 60[0m
+[0m[[32msuccess[0m] [0mTotal time: 3 s, completed 2015/01/25 0:29:56[0m

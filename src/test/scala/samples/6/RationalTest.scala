@@ -8,8 +8,8 @@ class RationalTest extends Specification {
    * 標準出力をMockingsするためのトレイト。
    */
   trait MockOutput extends Output {
-    var messages: Seq[String] = Seq()
-    override def println(s: String) { messages = messages :+ s }
+    var lastOut:String = ""
+    override def output(s: String) = {lastOut = s ; println("parameter is:'" + lastOut + "'")}
   }
 
 
@@ -20,7 +20,18 @@ class RationalTest extends Specification {
       oneThirds must not(equalTo(null))
     }
 
+    "標準出力に出力していること" in {
+      // 準備っとして、標準出力ぶん取っとく。
+      val stream = new java.io.ByteArrayOutputStream()
+      Console.setOut(stream)
 
+      // 作成
+      val sut = new Rational(1,2)
+
+      // 標準出力をアサーション
+      val actual = stream.toString ; stream.close()
+      actual must equalTo("Created 1 / 2\n")
+    }
 
   }
 

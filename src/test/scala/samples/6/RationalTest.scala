@@ -1,6 +1,7 @@
 package samples
 
 import org.specs2.mutable.Specification
+import org.mockito.Matchers
 
 class RationalTest extends Specification {
 
@@ -40,6 +41,20 @@ class RationalTest extends Specification {
 
     "事前条件の違反に触れた場合エラーを起こす" in {
       (new Rational(1, 0)) must throwA[IllegalArgumentException]
+    }
+
+  }
+
+  "フィールドの追加(6.5の内容)" should {
+
+    "Rationalオブジェクト同士を追加できる" in {
+      val a = new Rational(1,2)
+      val b = new Rational(3,4)
+
+      val sut = a add b
+
+      sut must notBeNull
+
     }
 
   }

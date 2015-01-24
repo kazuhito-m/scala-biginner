@@ -12,6 +12,12 @@ class Rational(n: Int, d: Int) {
   // メソッド群
   override def toString = n + " / " + d
 
-  def add(that: Rational): Rational = new Rational(10, 8) // FIXME 仮実装。早く実装してね！
+  def add(that:Rational):Rational = {
+    new Rational(
+      numer * that.denom + that.numer * denom
+      , denom * that.denom
+    )
+  }
+
 }
 

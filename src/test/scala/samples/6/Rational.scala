@@ -8,7 +8,7 @@ class Rational(n: Int, d: Int) {
   val denom: Int = d
   println("Created " + toString)
 
-  // メソッド軍
+  // メソッド群
   override def toString = n + " / " + d
   def add(that:Rational):Rational = new Rational(0,1) // FIXME 仮実装。早く実装してね！
 }

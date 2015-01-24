@@ -63,6 +63,8 @@ class RationalTest extends Specification {
       sut.denom must equalTo(3)
     }
 
+
+
   }
 
 }

@@ -1,6 +1,6 @@
 package samples
 
-class Rational(n: Int, d: Int) extends Output {
-  output("Created " + n + " / " + d)
+class Rational(n: Int, d: Int) {
+  println("Created " + n + " / " + d)
 }
 

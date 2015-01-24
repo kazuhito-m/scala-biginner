@@ -53,7 +53,7 @@ class RationalTest extends Specification {
 
       val sut = a add b
 
-      sut must notBeNull
+      sut must not beNull
 
     }
 

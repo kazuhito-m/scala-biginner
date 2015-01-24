@@ -2,11 +2,12 @@ package samples
 
 class Rational(n: Int, d: Int) {
 
-  // 暗黙的なコンストラクタの実装
-  require(d != 0)
   // 事前条件(precondition)
+  require(d != 0)
+  // フィールドセット
   val numer: Int = n
   val denom: Int = d
+  // コンストラクタの主処理っぽいもの
   println("Created " + toString)
 
   // メソッド群

@@ -27,7 +27,7 @@ class RationalTest extends Specification {
 
   }
 
-  "機能拡張と整理" should {
+  "機能拡張と整理(6.3の内容)" should {
 
     "分数のメッセージ自体は内部のメソッドによって作られることにする" in {
       val sut = new Rational(1, 2)

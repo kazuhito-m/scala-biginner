@@ -54,7 +54,6 @@ class RationalTest extends Specification {
       val sut = a add b
 
       sut must not beNull
-
     }
 
     "コンストラクタに放り込んだ値がフィールドとして参照できる" in {
@@ -70,7 +69,6 @@ class RationalTest extends Specification {
       val sut = a add b
 
       sut.toString must equalTo("10 / 8")
-
     }
 
   }

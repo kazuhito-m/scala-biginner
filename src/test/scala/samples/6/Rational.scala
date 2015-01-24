@@ -10,9 +10,9 @@ class Rational(n: Int, d: Int) {
   println("Created " + toString)
 
   // メソッド群
-  override def toString = n + " / " + d
+  override def toString = numer + " / " + denom
 
-  def add(that:Rational):Rational = {
+  def add(that: Rational): Rational = {
     new Rational(
       numer * that.denom + that.numer * denom
       , denom * that.denom

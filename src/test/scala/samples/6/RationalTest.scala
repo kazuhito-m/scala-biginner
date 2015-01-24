@@ -39,8 +39,7 @@ class RationalTest extends Specification {
   "事前条件のチェック(6.4の内容)" should {
 
     "事前条件の違反に触れた場合エラーを起こす" in {
-      val sut = new Rational(1, 0)
-      sut must throwA[IllegalArgumentException]
+      (new Rational(1, 0)) must throwA[IllegalArgumentException]
     }
 
   }

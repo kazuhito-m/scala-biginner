@@ -63,7 +63,15 @@ class RationalTest extends Specification {
       sut.denom must equalTo(3)
     }
 
+    "分数同士の足し算ができ値を確認出来る" in {
+      val a = new Rational(1, 2)
+      val b = new Rational(3, 4)
 
+      val sut = a add b
+
+      sut.toString must equalTo("5 / 4")
+
+    }
 
   }
 

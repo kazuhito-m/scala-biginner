@@ -1,3 +1,5 @@
 package samples
 
-class Rational(n: Int, d: Int)
+class Rational(n: Int, d: Int) {
+  println("Creatd " + n + " / " + d)
+}

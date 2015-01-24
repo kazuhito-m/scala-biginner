@@ -1,7 +1,7 @@
 package samples
 
 class Rational(n: Int, d: Int) {
-  println("Created " + n + " / " + d)
+  println("Created " + toString)
   override def toString = n + " / " + d
 }
 

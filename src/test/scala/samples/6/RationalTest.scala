@@ -69,7 +69,7 @@ class RationalTest extends Specification {
 
       val sut = a add b
 
-      sut.toString must equalTo("5 / 4")
+      sut.toString must equalTo("10 / 8")
 
     }
 

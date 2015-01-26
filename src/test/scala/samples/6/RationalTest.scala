@@ -133,6 +133,20 @@ class RationalTest extends Specification {
       actual.toString must equalTo("1 / 3")
     }
 
+    "演算子の優先順位の確認" in {
+      val x = new Rational(1 , 2)
+      val y = new Rational(2 , 3)
+
+      val actual1 = x + x * y
+      actual1.toString must equalTo("5 / 6")
+
+      val actual2 = (x + x) * y
+      actual2.toString must equalTo("2 / 3")
+
+      val actual3 = x + (x * y)
+      actual3.toString must equalTo("5 / 6")  // 本来の優先度と変わらない
+    }
+
   }
 
 }

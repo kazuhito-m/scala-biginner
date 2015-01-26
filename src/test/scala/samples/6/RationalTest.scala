@@ -113,5 +113,18 @@ class RationalTest extends Specification {
 
   }
 
+  "演算子の定義(6.9の内容)" should {
+
+    "通分できるなら作成時に通分する" in {
+      val a = new Rational(1 , 2)
+      val b = new Rational(2 , 3)
+
+      val actual = a + b
+
+      actual.toString must equalTo("7 / 6")
+    }
+
+  }
+
 }
 

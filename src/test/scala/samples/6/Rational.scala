@@ -34,6 +34,6 @@ class Rational(n: Int, d: Int) {
 
   // 最大公約数計算(再帰)
   private def gcd(a:Int , b:Int):Int = if (b == 0) a else gcd(b,a % b)
-  
+
 }
 

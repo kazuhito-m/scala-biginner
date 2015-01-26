@@ -7,6 +7,9 @@ class Rational(n: Int, d: Int) {
   // フィールドセット
   val numer: Int = n
   val denom: Int = d
+
+  def   this(n: Int) = this(n,1)
+
   // コンストラクタの主処理っぽいもの
   println("Created " + toString)
 

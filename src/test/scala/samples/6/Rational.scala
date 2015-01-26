@@ -4,9 +4,13 @@ class Rational(n: Int, d: Int) {
 
   // 事前条件(precondition)
   require(d != 0)
+
+  // 通分処理
+  private val g = gcd(n.abs , d.abs)
+
   // フィールドセット
-  val numer: Int = n
-  val denom: Int = d
+  val numer: Int = n / g
+  val denom: Int = d / g
 
   // 分子だけを指定すると分母は1固定になる(補助コンストラクター)
   def this(n: Int) = this(n, 1)
@@ -28,5 +32,8 @@ class Rational(n: Int, d: Int) {
 
   def max(that: Rational): Rational = if (this.lessThan(that)) that else this
 
+  // 最大公約数計算(再帰)
+  private def gcd(a:Int , b:Int):Int = if (b == 0) a else gcd(b,a % b)
+  
 }
 

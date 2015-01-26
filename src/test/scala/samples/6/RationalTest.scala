@@ -72,7 +72,7 @@ class RationalTest extends Specification {
 
   }
 
-  "事故参照を使った比較メソッド(6.6の内容)" should {
+  "自己参照を使った比較メソッド(6.6の内容)" should {
 
     "大小比較" in {
       val a = new Rational(1, 2)
@@ -83,6 +83,14 @@ class RationalTest extends Specification {
       actual must equalTo(true)
     }
 
+    "最大取得" in {
+      val a = new Rational(1, 2)
+      val b = new Rational(3, 4)
+
+      val actual = a max b
+
+      actual must equalTo(b)
+    }
 
   }
 

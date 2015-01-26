@@ -124,6 +124,15 @@ class RationalTest extends Specification {
       actual.toString must equalTo("7 / 6")
     }
 
+    "演算子で掛け算が出来る" in {
+      val a = new Rational(1 , 2)
+      val b = new Rational(2 , 3)
+
+      val actual = a * b
+
+      actual.toString must equalTo("1 / 3")
+    }
+
   }
 
 }

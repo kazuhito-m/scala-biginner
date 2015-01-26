@@ -115,7 +115,7 @@ class RationalTest extends Specification {
 
   "演算子の定義(6.9の内容)" should {
 
-    "通分できるなら作成時に通分する" in {
+    "演算子で足し算出来る" in {
       val a = new Rational(1 , 2)
       val b = new Rational(2 , 3)
 

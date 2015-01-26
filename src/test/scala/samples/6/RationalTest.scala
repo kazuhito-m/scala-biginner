@@ -104,5 +104,14 @@ class RationalTest extends Specification {
 
   }
 
+  "非公開フィールドとメソッド(6.8の内容)" should {
+
+    "通分できるなら作成時に通分する" in {
+      val actual = new Rational(66 , 42)
+      actual.toString must equalTo("11 / 7")
+    }
+
+  }
+
 }
 

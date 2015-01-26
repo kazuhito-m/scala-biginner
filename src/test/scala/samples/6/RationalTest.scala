@@ -94,6 +94,15 @@ class RationalTest extends Specification {
 
   }
 
+  "補助コンストラクターの活用(6.7の内容)" should {
+
+    "分子だけ指定して、分母を省略できるように" in {
+      val actual = new Rational(5)
+      actual.numer must equalTo(5)
+      actual.denom must equalTo(1)
+    }
+
+  }
 
 }
 

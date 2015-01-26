@@ -72,5 +72,20 @@ class RationalTest extends Specification {
 
   }
 
+  "事故参照を使った比較メソッド(6.6の内容)" should {
+
+    "大小比較" in {
+      val a = new Rational(1, 2)
+      val b = new Rational(3, 4)
+
+      val actual = a lessThan b
+
+      actual must equalTo(true)
+    }
+
+
+  }
+
+
 }
 

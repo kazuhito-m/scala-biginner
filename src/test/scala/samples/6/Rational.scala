@@ -48,3 +48,4 @@ class Rational(n: Int, d: Int) {
   def *(i: Int) = new Rational(numer * i, denom)
 
 }
+

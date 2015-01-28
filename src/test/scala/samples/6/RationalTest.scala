@@ -165,11 +165,14 @@ class RationalTest extends Specification {
 
   "暗黙の型変換(6.12の内容)" should {
 
+    // 「暗黙の型変換」を使った、IntからRational型への変換メソッド。
+    implicit def intToRational(x: Int) = new Rational(x)
+
     "intの掛け算演算時の「暗黙の型変換」" in {
       val actual = 3 * (new Rational(2,3))
       actual.toString must equalTo("2 / 1")
     }
-    
+
   }
 
 }

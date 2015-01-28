@@ -44,6 +44,5 @@ class Rational(n: Int, d: Int) {
   // "*" 演算子
   def *(that: Rational): Rational = new Rational(numer * that.numer, denom * that.denom)
 
-
 }
 

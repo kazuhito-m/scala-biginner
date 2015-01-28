@@ -156,8 +156,12 @@ class RationalTest extends Specification {
       actual.toString must equalTo("5 / 3")
     }
 
-  }
+    "intの掛け算演算子オーバーロード" in {
+      val actual = new Rational(2,3) * 3
+      actual.toString must equalTo("2 / 1")
+    }
 
+  }
 
 }
 

@@ -44,5 +44,8 @@ class Rational(n: Int, d: Int) {
   // "*" 演算子
   def *(that: Rational): Rational = new Rational(numer * that.numer, denom * that.denom)
 
+  // "*" 演算子（整数の掛け算バージョン）
+  def *(i: Int) = new Rational(numer * i, denom)
+
 }
 

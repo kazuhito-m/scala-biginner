@@ -149,5 +149,15 @@ class RationalTest extends Specification {
 
   }
 
+  "メソッドの多重定義(6.11の内容)" should {
+
+    "intのプラス演算子オーバーロード" in {
+      val actual = new Rational(2,3) + 1
+      actual.toString must equalTo("5 / 3")
+    }
+
+  }
+
+
 }
 

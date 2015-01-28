@@ -38,6 +38,9 @@ class Rational(n: Int, d: Int) {
   // "+" 演算子
   def +(that: Rational): Rational = add(that)
 
+  // "+" 演算子(整数の足し算バージョン)
+  def +(i: Int) = new Rational(numer * i + denom, denom)
+
   // "*" 演算子
   def *(that: Rational): Rational = new Rational(numer * that.numer, denom * that.denom)
 

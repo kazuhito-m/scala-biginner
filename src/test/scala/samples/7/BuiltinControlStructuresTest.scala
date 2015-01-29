@@ -24,7 +24,7 @@ class BuiltinControlStructuresTest extends Specification {
     "whileループ(7.2の内容)" in {
 
       // 命令型スタイルの最大公約数計算
-      def gcdLoop(x:Long, y:Long): Long = {
+      def gcdLoop(x: Long, y: Long): Long = {
         var a = x
         var b = y
         while (a != 0) {
@@ -37,13 +37,13 @@ class BuiltinControlStructuresTest extends Specification {
 
       // 関数型スタイルの最大公約数計算
       def gcd(x: Long, y: Long): Long = {
-        if (y == 0) x else gcd(y , x % y)
+        if (y == 0) x else gcd(y, x % y)
       }
 
       val i = 9
       val j = 6
 
-      gcdLoop(i,j) must equalTo(gcd(i,j))
+      gcdLoop(i, j) must equalTo(gcd(i, j))
 
     }
 

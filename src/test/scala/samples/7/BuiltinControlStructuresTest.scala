@@ -14,7 +14,7 @@ class BuiltinControlStructuresTest extends Specification {
       if (!args.isEmpty)
         filename1 = args(0)
       // 関数型スタイル
-      val filename2 = if (args.isEmpty) "default.txt" else args(0)
+      val filename2 = if (!args.isEmpty) args(0) else "default.txt"
       // 書き方違えど双方結果は同じ
       filename1 must equalTo(filename2)
     }

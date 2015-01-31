@@ -2,6 +2,7 @@ package samples
 
 import org.specs2.mutable.Specification
 import org.mockito.Matchers
+import java.io.File
 
 // 組み込み制御構造
 class BuiltinControlStructuresTest extends Specification {
@@ -50,6 +51,17 @@ class BuiltinControlStructuresTest extends Specification {
 
       gcdLoop(i, j) must equalTo(gcd(i, j))
 
+    }
+
+  }
+
+  "for式(7.3の内容)" should {
+
+    "for式でディレクトリ内のファイルリストを表示" in {
+      val filesHere = (new File(".")).listFiles()
+      for (file <- filesHere)
+        println(file)
+      (filesHere.length > 7) must equalTo(true)
     }
 
   }

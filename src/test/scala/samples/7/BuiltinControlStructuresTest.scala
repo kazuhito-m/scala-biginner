@@ -147,6 +147,32 @@ class BuiltinControlStructuresTest extends Specification {
 
     }
 
+    "変数への中間結果の束縛" in {
+
+      val filesHere = (new File(".")).listFiles()
+      var c = 0
+
+      def fileLines(file: File) = scala.io.Source.fromFile(file).getLines.toList
+
+      def grep(pattern: String) =
+        for (
+          file <- filesHere
+          if file.getName.endsWith(".gitignore");
+          line <- fileLines(file) ; // ここ、教科書とちょっと違うけど、コロンが無ければコンパイルエラーになるから…
+          trimmed = line.trim
+          if trimmed.matches(pattern)
+        ) {
+          println(file + ": " + line.trim)
+          c += 1
+        }
+
+      grep(".*project.*")
+
+      c must equalTo(2)
+
+
+    }
+
   }
 
 }

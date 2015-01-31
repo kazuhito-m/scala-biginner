@@ -186,6 +186,21 @@ class BuiltinControlStructuresTest extends Specification {
 
     }
 
+    "for式でFileのArrayからIntのArrayを作成する" in {
+      val filesHere = (new File(".")).listFiles()
+      def fileLines(file: File) = scala.io.Source.fromFile(file).getLines.toList
+      val forLineLengths =
+        for (
+          file <- filesHere
+          if file.getName.endsWith(".gitignore");
+          line <- fileLines(file);
+          trimmed = line.trim
+          if trimmed.matches(".*project.*")
+        ) yield trimmed.length
+
+      forLineLengths must equalTo(Array(15, 16))
+    }
+
   }
 
 }

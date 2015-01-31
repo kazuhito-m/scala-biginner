@@ -91,6 +91,23 @@ class BuiltinControlStructuresTest extends Specification {
       (a - 1) must equalTo(b)
     }
 
+    "フィルタリング" in {
+      var c1 = 0
+      val filesHere = (new File(".")).listFiles()
+      for (file <- filesHere if file.getName.endsWith(".scala")) {
+        println(file)
+        c1 += 1
+      }
+      // IF文を利用しての同処理
+      var c2 = 0
+      for (file <- filesHere) {
+        if (file.getName.endsWith(".scala")) {
+          println(file)
+          c2 += 1
+        }
+      }
+      c1 must equalTo(c2)
+    }
   }
 
 }

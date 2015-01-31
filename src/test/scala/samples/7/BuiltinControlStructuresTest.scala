@@ -58,10 +58,19 @@ class BuiltinControlStructuresTest extends Specification {
   "for式(7.3の内容)" should {
 
     "for式でディレクトリ内のファイルリストを表示" in {
+      var c1 = 0
       val filesHere = (new File(".")).listFiles()
-      for (file <- filesHere)
+      for (file <- filesHere) {
         println(file)
-      (filesHere.length > 7) must equalTo(true)
+        c1 += 1
+      }
+      // Scalaではあまり一般的でないコード
+      var c2 = 0
+      for (i <- 0 to filesHere.length - 1) {
+        println(filesHere(i))
+        c2 += 1
+      }
+      c1 must equalTo(c2)
     }
 
     "scala式インクリメント処理" in {

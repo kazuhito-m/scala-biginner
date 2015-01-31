@@ -64,6 +64,24 @@ class BuiltinControlStructuresTest extends Specification {
       (filesHere.length > 7) must equalTo(true)
     }
 
+    "scala式インクリメント処理" in {
+      // 指定数値を含む範囲型
+      var a = 0
+      for (i <- 1 to 4) {
+        println("Interation " + i)
+        a = a + 1
+      }
+      // 指定数値を含まない範囲型
+      var b = 0
+      for (j <- 1 until 4) {
+        println("Interation " + j)
+        b = b + 1
+      }
+
+      // 確認
+      (a - 1) must equalTo(b)
+    }
+
   }
 
 }

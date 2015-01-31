@@ -108,6 +108,45 @@ class BuiltinControlStructuresTest extends Specification {
       }
       c1 must equalTo(c2)
     }
+
+    "複数のフィルタリングを使用する" in {
+      var c = 0
+
+      val filesHere = (new File(".")).listFiles()
+      for (
+        file <- filesHere
+        if file.isFile;
+        if file.getName.endsWith(".gitignore")
+      ) {
+        println(file); c += 1
+      }
+      c must equalTo(1)
+    }
+
+    "入れ子の反復処理" in {
+
+      val filesHere = (new File(".")).listFiles()
+      var c = 0
+
+      def fileLines(file: File) = scala.io.Source.fromFile(file).getLines.toList
+
+      def grep(pattern: String) =
+        for (
+          file <- filesHere
+          if file.getName.endsWith(".gitignore");
+          line <- fileLines(file)
+          if line.trim.matches(pattern)
+        ) {
+          println(file + ": " + line.trim)
+          c += 1
+        }
+
+      grep(".*project.*")
+
+      c must equalTo(2)
+
+    }
+
   }
 
 }

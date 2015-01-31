@@ -158,7 +158,7 @@ class BuiltinControlStructuresTest extends Specification {
         for (
           file <- filesHere
           if file.getName.endsWith(".gitignore");
-          line <- fileLines(file) ; // ここ、教科書とちょっと違うけど、コロンが無ければコンパイルエラーになるから…
+          line <- fileLines(file); // ここ、教科書とちょっと違うけど、コロンが無ければコンパイルエラーになるから…
           trimmed = line.trim
           if trimmed.matches(pattern)
         ) {
@@ -170,6 +170,19 @@ class BuiltinControlStructuresTest extends Specification {
 
       c must equalTo(2)
 
+    }
+
+    "新しいコレクションの作成" in {
+
+      def grepFiles(filesHere: Array[File], extension: String) =
+        for {
+          file <- filesHere
+          if file.getName.endsWith(extension)
+        } yield file
+
+      val actual = grepFiles((new File(".")).listFiles(), ".gitignore")
+
+      actual.length must equalTo(1)
 
     }
 

@@ -3,11 +3,12 @@ package samples
 import org.specs2.mutable.Specification
 import org.mockito.Matchers
 
+// 組み込み制御構造
 class BuiltinControlStructuresTest extends Specification {
 
-  "組み込み制御構造" should {
+  "条件if式(7.1の内容)" should {
 
-    "条件if式(7.1の内容)" in {
+    "命令型スタイルと関数型スタイル" in {
       val args: Array[String] = Array()
       // 命令形スタイル
       var filename1 = "default.txt"
@@ -21,7 +22,11 @@ class BuiltinControlStructuresTest extends Specification {
       filename1 must equalTo(filename2)
     }
 
-    "whileループ(7.2の内容)" in {
+  }
+
+  "whileループ(7.2の内容)" should {
+
+    "命令型と関数型で関数定義しループを書いてみる" in {
 
       // 命令型スタイルの最大公約数計算
       def gcdLoop(x: Long, y: Long): Long = {

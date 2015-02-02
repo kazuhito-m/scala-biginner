@@ -262,6 +262,9 @@ class BuiltinControlStructuresTest extends Specification {
       val actual = urlFor("http://google.com")
       actual.toString must equalTo("http://google.com")
 
+      val actual2 = urlFor("murimuri")
+      actual2.toString must equalTo("http://www.scala-lang.org")
+
     }
 
   }

@@ -5,6 +5,7 @@ import org.mockito.Matchers
 import java.io.{IOException, FileNotFoundException, File}
 import org.specs2.io.FileReader
 import java.io
+import java.net.{MalformedURLException, URL}
 
 // 組み込み制御構造
 class BuiltinControlStructuresTest extends Specification {
@@ -246,6 +247,20 @@ class BuiltinControlStructuresTest extends Specification {
 
       val actual2 = fileLoad("notfound.txt")
       actual2 must equalTo(9999)
+
+    }
+
+    "値を生成するcatch句" in {
+      def urlFor(path:String) =
+        try {
+          new URL(path)
+        } catch {
+          case e: MalformedURLException =>
+            new URL("http://www.scala-lang.org")
+        }
+
+      val actual = urlFor("http://google.com")
+      actual.toString must equalTo("http://google.com")
 
     }
 

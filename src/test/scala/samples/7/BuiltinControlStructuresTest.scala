@@ -2,7 +2,9 @@ package samples
 
 import org.specs2.mutable.Specification
 import org.mockito.Matchers
-import java.io.File
+import java.io.{IOException, FileNotFoundException, File}
+import org.specs2.io.FileReader
+import java.io
 
 // 組み込み制御構造
 class BuiltinControlStructuresTest extends Specification {
@@ -203,5 +205,26 @@ class BuiltinControlStructuresTest extends Specification {
 
   }
 
-}
+  "try式による例外処理(7.4の内容)" should {
 
+    "trycatchを使った処理" in {
+
+      def fileLoad(path:String):Int = try {
+        val f = new io.FileReader(path)
+        val res = f.read()
+        f.close()
+        res
+      } catch {
+        case ex: FileNotFoundException => 9999
+        case ex: IOException => 1111
+      }
+
+      val actual = fileLoad(".gitignore")
+      actual must equalTo(47)
+
+    }
+
+
+  }
+
+}

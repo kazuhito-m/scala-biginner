@@ -269,4 +269,24 @@ class BuiltinControlStructuresTest extends Specification {
 
   }
 
+  "match式(7.5の内容)" should {
+
+    "結果値を生成するmatch式" in {
+
+      def friendMatch(arg:String) =
+        arg match {
+          case "salt" => "pepper"
+          case "chips" => "salsa"
+          case "eggs" => "bacon"
+          case _ => "huh?"
+        }
+
+      friendMatch("salt") must equalTo("pepper")
+      friendMatch("chips") must equalTo("salsa")
+      friendMatch("当たらん場合") must equalTo("huh?")
+
+    }
+
+  }
+
 }

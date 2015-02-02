@@ -251,7 +251,7 @@ class BuiltinControlStructuresTest extends Specification {
     }
 
     "値を生成するcatch句" in {
-      def urlFor(path:String) =
+      def urlFor(path: String) =
         try {
           new URL(path)
         } catch {
@@ -273,7 +273,7 @@ class BuiltinControlStructuresTest extends Specification {
 
     "結果値を生成するmatch式" in {
 
-      def friendMatch(arg:String) =
+      def friendMatch(arg: String) =
         arg match {
           case "salt" => "pepper"
           case "chips" => "salsa"
@@ -284,6 +284,44 @@ class BuiltinControlStructuresTest extends Specification {
       friendMatch("salt") must equalTo("pepper")
       friendMatch("chips") must equalTo("salsa")
       friendMatch("当たらん場合") must equalTo("huh?")
+
+    }
+
+  }
+
+  "breakとcontinueを使わずに済ませる(7.6の内容)" should {
+
+    "breakやcontinueを使わないループ" in {
+
+      val args = Array("-2.scala", "Test.scala")
+
+      var i = 0
+      var foundIt = false
+
+      while (i < args.length && !foundIt) {
+        if (!args(i).startsWith("-")) {
+          if (args(i).endsWith(".scala")) {
+            foundIt = true
+          }
+        }
+        i = i + 1
+      }
+
+      foundIt must equalTo(true)
+
+    }
+
+    "var付きのループの代わりに再帰を使ったループ" in {
+
+      def searchFrom(i: Int, args: Array[String]): Int =
+        if (i >= args.length) -1
+        else if (args(i).startsWith("-")) searchFrom(i + 1, args)
+        else if (args(i).endsWith(".scala")) i
+        else searchFrom(i + 1, args)
+
+      val actual = searchFrom(0, Array("-2.scala", "Test.scala"))
+
+      actual must equalTo(1)
 
     }
 

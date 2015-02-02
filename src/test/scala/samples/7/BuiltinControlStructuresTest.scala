@@ -222,6 +222,9 @@ class BuiltinControlStructuresTest extends Specification {
       val actual = fileLoad(".gitignore")
       actual must equalTo(47)
 
+      val actual2 = fileLoad("notfound.txt")
+      actual2 must equalTo(9999)
+
     }
 
 

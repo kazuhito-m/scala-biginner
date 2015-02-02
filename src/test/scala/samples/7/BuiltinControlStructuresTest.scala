@@ -209,7 +209,7 @@ class BuiltinControlStructuresTest extends Specification {
 
     "trycatchを使った処理" in {
 
-      def fileLoad(path:String):Int = try {
+      def fileLoad(path: String): Int = try {
         val f = new io.FileReader(path)
         val res = f.read()
         f.close()
@@ -227,6 +227,27 @@ class BuiltinControlStructuresTest extends Specification {
 
     }
 
+    "finally節" in {
+
+      def fileLoad(path: String): Int = {
+        var f: io.FileReader = null
+        try {
+          f = new io.FileReader(path)
+          f.read()
+        } catch {
+          case ex: FileNotFoundException => 9999
+        } finally {
+          if (f != null) f.close()
+        }
+      }
+
+      val actual = fileLoad(".gitignore")
+      actual must equalTo(47)
+
+      val actual2 = fileLoad("notfound.txt")
+      actual2 must equalTo(9999)
+
+    }
 
   }
 

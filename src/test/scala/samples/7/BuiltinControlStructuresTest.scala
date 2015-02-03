@@ -329,7 +329,7 @@ class BuiltinControlStructuresTest extends Specification {
 
   "変数のスコープ(7.7の内容)" should {
 
-    "掛け算と変数スコープ" in {
+    "掛け算と変数スコープ(命令形で表すと)" in {
 
       def makeStringMultiTable(): String = {
         var res = ""
@@ -360,7 +360,7 @@ class BuiltinControlStructuresTest extends Specification {
 
       val actual = makeStringMultiTable()
 
-      actual must not beNull
+      actual must not beNulls
 
     }
 

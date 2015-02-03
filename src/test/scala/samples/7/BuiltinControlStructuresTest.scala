@@ -376,7 +376,34 @@ class BuiltinControlStructuresTest extends Specification {
 
     }
 
-  }
+    "掛け算と変数スコープ(関数型で表すと)" in {
 
+      // 一段目をシーケンスとして返す。
+      def makeRowSeq(row: Int) =
+        for (col <- 1 to 10) yield {
+          val prod = (row * col).toString
+          val padding = " " * (4 - prod.length)
+          padding + prod
+        }
+
+      // 1段目を文字列として返す。
+      def makeRow(row: Int) = makeRowSeq(row).mkString
+
+      // 1行に1段分の文字列を収めた表を返す。
+      def multiTable() = {
+        val tableSeq =
+          for (row <- 1 to 10)
+          yield makeRow(row)
+        tableSeq.mkString("\n")
+      }
+
+      val actual = multiTable()
+
+      actual must not beNull
+
+
+    }
+
+  }
 
 }

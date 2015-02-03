@@ -327,4 +327,44 @@ class BuiltinControlStructuresTest extends Specification {
 
   }
 
+  "変数のスコープ(7.7の内容)" should {
+
+    "掛け算と変数スコープ" in {
+
+      def makeStringMultiTable(): String = {
+        var res = ""
+        var i = 1
+        // ここではiだけがスコープに入ってる
+        while (i <= 10) {
+          var j = 1
+          // ここではiとjがスコープに入っている
+          while (j <= 10) {
+            val prod = (i * j).toString
+            // ここでは、i,j,prodがスコープに入っている。
+            var k = prod.length
+            // ここではi,j,k,prodがスコープに入っている
+            while (k < 4) {
+              res += " "
+              k += 1
+            }
+            res += prod
+            j += 1
+          }
+          //iとjはまだスコープに入っている。prodとkはスコープから外れている。
+          res += "\n"
+          i += 1
+        }
+        // iはまだスコープに入っている。j,prod,kはスコープから外れている
+        res
+      }
+
+      val actual = makeStringMultiTable()
+
+      actual must not beNull
+
+    }
+
+  }
+
+
 }

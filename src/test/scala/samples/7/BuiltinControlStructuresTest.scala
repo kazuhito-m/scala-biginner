@@ -360,7 +360,7 @@ class BuiltinControlStructuresTest extends Specification {
 
       val actual = makeStringMultiTable()
 
-      actual must not beNulls
+      actual must not beNull
 
     }
 

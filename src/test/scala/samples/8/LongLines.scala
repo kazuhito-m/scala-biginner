@@ -9,7 +9,8 @@ object LongLines {
   }
 
   private def processLine(filename: String, width: Int, line: String) {
-    println(filename + ": " + line.trim)
+    if (line.length < width)
+      println(filename + ": " + line.trim)
   }
 
 }

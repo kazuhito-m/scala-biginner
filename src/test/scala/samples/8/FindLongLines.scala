@@ -1,4 +1,3 @@
-import scala.io.Source
 
 object FindLongLines {
 

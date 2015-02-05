@@ -13,6 +13,9 @@ class FirstclassFanctionsTest extends Specification {
     "値としての関数(function values)" in {
       var increase = (x: Int) => x + 1
       increase(10) must equalTo(11)
+      // 変数なので、上書きもOK
+      increase = (x: Int) => x + 9999
+      increase(10) must equalTo(10009)
     }
 
   }

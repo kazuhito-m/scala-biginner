@@ -31,10 +31,14 @@ class FirstclassFanctionsTest extends Specification {
     }
 
     "フィルターに関数を放り込む例" in {
+      // 個々の値をほかに副作用させる例
       val someNumbers = List(-11, -10, -5, 0, 5, 10)
       var sum = 0
       someNumbers.foreach((x: Int) => sum += x)
       sum must equalTo(-11)
+      // 絞り込みの例
+      val actual = someNumbers.filter((x: Int) => x > 0)
+      actual must equalTo(List(5, 10))
     }
 
   }

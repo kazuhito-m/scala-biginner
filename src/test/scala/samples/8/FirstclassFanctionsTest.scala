@@ -57,4 +57,15 @@ class FirstclassFanctionsTest extends Specification {
 
   }
 
+  "プレースホルダー構文(8.5の内容)" should {
+
+    "プレースホルダを使った例" in {
+      val someNumbers = List(-11, -10, -5, 0, 5, 10)
+      // プレースホルダー使用例
+      val actual = someNumbers.filter(_ > 0)
+      actual must equalTo(List(5, 10))
+    }
+
+  }
+
 }

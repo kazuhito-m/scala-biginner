@@ -50,6 +50,9 @@ class FirstclassFanctionsTest extends Specification {
       // パラメータの型を省略
       val actual = someNumbers.filter((x) => x > 0)
       actual must equalTo(List(5, 10))
+      // カッコすら省略
+      val actual2 = someNumbers.filter(x => x > 0)
+      actual2 must equalTo(List(5, 10))
     }
 
   }

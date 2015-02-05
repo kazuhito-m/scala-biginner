@@ -66,6 +66,11 @@ class FirstclassFanctionsTest extends Specification {
       actual must equalTo(List(5, 10))
     }
 
+    "二個以上のプレースホルダーを使った例" in {
+      val f = (_: Int) + (_: Int)
+      f(5, 10) must equalTo(15)
+    }
+
   }
 
 }

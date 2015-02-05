@@ -18,6 +18,18 @@ class FirstclassFanctionsTest extends Specification {
       increase(10) must equalTo(10009)
     }
 
+    "ワンライナーでなく、処理を持つ場合" in {
+      val increase = (x: Int) => {
+        println("We")
+        println("are")
+        println("here!")
+        x + 1
+      }
+
+      increase(10) must equalTo(11)
+
+    }
+
   }
 
 }

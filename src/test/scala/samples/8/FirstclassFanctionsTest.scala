@@ -43,4 +43,15 @@ class FirstclassFanctionsTest extends Specification {
 
   }
 
+  "関数リテラルの短縮形(8.4の内容)" should {
+
+    "短縮形" in {
+      val someNumbers = List(-11, -10, -5, 0, 5, 10)
+      // パラメータの型を省略
+      val actual = someNumbers.filter((x) => x > 0)
+      actual must equalTo(List(5, 10))
+    }
+
+  }
+
 }

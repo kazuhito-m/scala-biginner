@@ -78,11 +78,13 @@ class FirstclassFanctionsTest extends Specification {
     "部分適用された関数" in {
       // まずは普通に定義
       def sum(a: Int, b: Int, c: Int) = a + b + c
-      val actual = sum(1,2,3)
+      val actual = sum(1, 2, 3)
       actual must equalTo(6)
-
+      // 次にプレースホルダーを仕込む
+      val x = sum _
+      val actual2 = x(1, 2, 3)
+      actual2 must equalTo(6)
     }
-
 
   }
 

@@ -138,4 +138,22 @@ class FirstclassFanctionsTest extends Specification {
 
   }
 
+  "連続パラメーター(8.8の内容)" should {
+
+    "アズター指定は内部でArray型に成る" in {
+
+      def sum(args: Int*) = {
+        var res = 0
+        for (arg <- args) res += arg
+        res
+      }
+
+      val actual = sum(1, 2, 3, 4, 5, 6)
+
+      actual must equalTo(21)
+
+    }
+
+  }
+
 }

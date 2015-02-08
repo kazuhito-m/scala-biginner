@@ -84,6 +84,10 @@ class FirstclassFanctionsTest extends Specification {
       val x = sum _
       val actual2 = x(1, 2, 3)
       actual2 must equalTo(6)
+      // 一部の引数をコンクリートした状態の関数を定義する
+      val y = sum(1, _: Int , 3)
+      val actual3 = y(2)
+      actual3 must equalTo(6)
     }
 
   }

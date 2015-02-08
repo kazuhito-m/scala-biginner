@@ -4,6 +4,7 @@ import org.specs2.mutable.Specification
 import java.io.{IOException, FileNotFoundException, File}
 import java.io
 import java.net.{MalformedURLException, URL}
+import scalaz.Digit._0
 
 // いっちょ前の関数
 class FirstclassFanctionsTest extends Specification {
@@ -169,9 +170,16 @@ class FirstclassFanctionsTest extends Specification {
 
       isEven(7) must equalTo(false)
 
+
+//      // 最適化されるもの
+//      val funValue = nestedFun _
+//      def nestedFun(x: Int) {
+//        if (x != 0)  { println(x); funValue(x - 1)}
+//      }
+// 
+//      funValue(7) must equalTo(false)
+
     }
-
-
 
   }
 

@@ -85,7 +85,7 @@ class FirstclassFanctionsTest extends Specification {
       val actual2 = x(1, 2, 3)
       actual2 must equalTo(6)
       // 一部の引数をコンクリートした状態の関数を定義する
-      val y = sum(1, _: Int , 3)
+      val y = sum(1, _: Int, 3)
       val actual3 = y(2)
       actual3 must equalTo(6)
     }
@@ -119,6 +119,21 @@ class FirstclassFanctionsTest extends Specification {
       var sum = 0
       someNumbers.foreach(sum += _)
       sum must equalTo(-11)
+    }
+
+
+    "変数は関数に束縛された時点の値を記録する" in {
+
+      def makeIncreaser(more: Int) = (x: Int) => x + more
+
+      val inc1 = makeIncreaser(1)
+
+      val inc9999 = makeIncreaser(9999)
+
+      inc1(10) must equalTo(11)
+
+      inc9999(10) must equalTo(10009)
+
     }
 
   }

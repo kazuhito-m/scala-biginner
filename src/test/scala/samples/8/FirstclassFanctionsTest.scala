@@ -92,4 +92,28 @@ class FirstclassFanctionsTest extends Specification {
 
   }
 
+  "クロージャー(8.7の内容)" should {
+
+    "開いた項(open terms)" in {
+
+      var more = 1
+
+      // 変数束縛
+      val addMore = (x: Int) => x + more
+
+      // 関数の結果に影響を及ぼすし、取り出すことも出来る。
+      addMore(10) must equalTo(11)
+      more must equalTo(1)
+
+      // varなら束縛されている変数の変更も可能
+      more = 9999
+
+      // 観測するとその影響を受けている。
+      addMore(10) must equalTo(10009)
+      more must equalTo(9999)
+
+    }
+
+  }
+
 }

@@ -156,4 +156,24 @@ class FirstclassFanctionsTest extends Specification {
 
   }
 
+  "末尾再帰(8.9の内容)" should {
+
+    "末尾再帰の限界" in {
+
+      // 二つ以上の関数を繰り返すようなものは、末尾再帰として最適化されない
+      def isEven(x: Int) : Boolean =
+        if (x == 0) true else isOdd(x - 1)
+
+      def isOdd(x: Int) : Boolean =
+        if (x == 0) false else isEven(x - 1)
+
+      isEven(7) must equalTo(false)
+
+    }
+
+
+
+  }
+
+
 }

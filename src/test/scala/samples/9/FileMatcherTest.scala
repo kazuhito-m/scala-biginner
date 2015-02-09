@@ -16,6 +16,11 @@ class FileMatcherTest extends Specification {
       actual.length must equalTo(4)
     }
 
+    "ファイルの一部を含んでいるものを取得するメソッドのテスト" in {
+      val actual = FileMatcher.filesContaining("git")
+      actual.length must equalTo(2)
+    }
+
   }
 
 }

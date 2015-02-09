@@ -9,4 +9,13 @@ import scalaz.Digit._0
 // いっちょ前の関数
 class FileMatcherTest extends Specification {
 
+  "重複するコードの削減(9.1)" should {
+
+    "ファイルの末尾指定で集めるメソッドのテスト" in {
+      val actual = FileMatcher.fileEnding("t")
+      actual.length must equalTo(4)
+    }
+
+  }
+
 }

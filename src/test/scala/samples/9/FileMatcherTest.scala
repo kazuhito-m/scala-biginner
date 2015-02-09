@@ -21,6 +21,11 @@ class FileMatcherTest extends Specification {
       actual.length must equalTo(2)
     }
 
+    "ファイル名を正規表現で取得するメソッドのテスト" in {
+      val actual = FileMatcher.filesRegex(".*d.*")
+      actual.length must equalTo(4)
+    }
+
   }
 
 }

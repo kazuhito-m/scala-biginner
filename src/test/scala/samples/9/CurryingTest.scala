@@ -62,4 +62,13 @@ class CurryingTest extends Specification {
 
   }
 
+  "カリー化(9.3)" should {
+
+    "昔ながらの普通の関数" in {
+      def plainOldSum(x: Int, y: Int) = x + y
+      plainOldSum(1, 2) must equalTo(3)
+    }
+
+  }
+
 }

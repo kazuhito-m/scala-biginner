@@ -82,6 +82,13 @@ class CurryingTest extends Specification {
       actual must equalTo(3)
     }
 
+    "第二関数の参照を手に入れる方法" in {
+      // プレースフォルダを指定すると第二関数を取得出来る。
+      val onePlus = curriedSum(1) _
+      val actual = onePlus(2)
+      actual must equalTo(3)
+    }
+
   }
 
 }

@@ -87,6 +87,10 @@ class CurryingTest extends Specification {
       val onePlus = curriedSum(1) _
       val actual = onePlus(2)
       actual must equalTo(3)
+      // 値違いのバージョン
+      val twoPlus = curriedSum(2) _
+      val actual2 = twoPlus(2)
+      actual2 must equalTo(4)
     }
 
   }

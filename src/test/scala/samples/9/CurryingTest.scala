@@ -64,9 +64,22 @@ class CurryingTest extends Specification {
 
   "カリー化(9.3)" should {
 
-    "昔ながらの普通の関数" in {
-      def plainOldSum(x: Int, y: Int) = x + y
+    // 昔ながらの普通の関数
+    def plainOldSum(x: Int, y: Int) = x + y
+
+    // カリー化された関数
+    def curriedSum(x: Int)(y: Int) = x + y
+
+    "普通の関数とカリー化された関数" in {
       plainOldSum(1, 2) must equalTo(3)
+      curriedSum(1)(2) must equalTo(3)
+    }
+
+    "カリー化関数をばらして実行した例" in {
+      def first(x: Int) = (y: Int) => x + y
+      val second = first(1)
+      val actual = second(2)
+      actual must equalTo(3)
     }
 
   }

@@ -23,8 +23,14 @@ class CurryingTest extends Specification {
     def containsNegF(nums: List[Int]): Boolean = nums.exists(_ < 0)
 
     "関数自体のただしさテスト" in {
-      var baseParam = List(1,2,3,4)
+      var baseParam = List(1, 2, 3, 4)
       var expected = false
+
+      containsNegC(baseParam) must equalTo(expected)
+      containsNegF(baseParam) must equalTo(expected)
+
+      baseParam = List(1, 2, -3, 4)
+      expected = true
 
       containsNegC(baseParam) must equalTo(expected)
       containsNegF(baseParam) must equalTo(expected)

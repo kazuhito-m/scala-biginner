@@ -18,6 +18,9 @@ class UserDefinitionControlStructureTest extends Specification {
       actual must equalTo(7)
 
     }
+    
+    val test_file_name = "test.txt"
+    val test_file_text = "Test text."
 
     "初期処理と終了処理を面倒見る制御構造を作る" in {
 
@@ -31,16 +34,42 @@ class UserDefinitionControlStructureTest extends Specification {
       }
 
       withPrintWriter(
-        new File("test.txt"),
-        writer => writer.println("Test text.")
+        new File(test_file_name),
+        writer => writer.println(test_file_text)
       )
 
-      val actual = Source.fromFile("test.txt").getLines.reduceLeft(_ + _)
-      (new File("test.txt")).delete
+      val actual = Source.fromFile(test_file_name).getLines.reduceLeft(_ + _)
+      (new File(test_file_name)).delete
 
-      actual must equalTo("Test text.")
+      actual must equalTo(test_file_text)
 
     }
+
+
+    "ローンパターンを使った制御構造(カリー化適用後)" in {
+
+      def withPrintWriter(file: File)(op: PrintWriter => Unit) {
+        val writer = new PrintWriter(file)
+        try {
+          op(writer)
+        } finally {
+          writer.close()
+        }
+      }
+
+      val f = new File(test_file_name)
+
+      withPrintWriter(f) {
+        writer => writer.println(test_file_text)
+      }
+
+      val actual = Source.fromFile(test_file_name).getLines.reduceLeft(_ + _)
+      (new File(test_file_name)).delete
+
+      actual must equalTo(test_file_text)
+
+    }
+
 
   }
 

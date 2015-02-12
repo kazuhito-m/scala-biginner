@@ -81,6 +81,9 @@ class UserDefinitionControlStructureTest extends Specification {
         throw new AssertionError
 
     "アサーションのための制御構造の実装" in {
+      // myAssert(5 > 3) こう書きたい…のだが
+      myAssert(() => 5 > 3)
+
       // フラグONで偽のもの
       assertionEnabled = true
       (myAssert(() => 5 < 3)) must throwA[AssertionError]

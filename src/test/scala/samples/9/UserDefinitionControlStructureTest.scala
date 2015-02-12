@@ -93,5 +93,23 @@ class UserDefinitionControlStructureTest extends Specification {
       (myAssert(() => 5 < 3)) must throwA[AssertionError]
     }
 
+    // 名前渡しパラメータを使ってのアサーション構文
+    def byNameAssert(predicate: => Boolean) =
+      if (assertionEnabled && !predicate)
+        throw new AssertionError
+
+    "名前渡しパラメーターを使ったアサーションのための制御構造" in {
+      // myAssert(5 > 3) こう書きたい…のだが
+      byNameAssert(5 > 3)
+
+      // フラグOFF中
+      assertionEnabled = false
+      byNameAssert(5 < 3)
+
+      // フラグONで偽のもの
+      assertionEnabled = true
+      (byNameAssert(5 < 3)) must throwA[AssertionError]
+    }
+
   }
 }

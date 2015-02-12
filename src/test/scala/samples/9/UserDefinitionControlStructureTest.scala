@@ -74,13 +74,13 @@ class UserDefinitionControlStructureTest extends Specification {
 
   "名前渡しパラメーター(9.5)" should {
 
-    var assertionEnabled = true
-
-    def myAssert(predicate: () => Boolean) =
-      if (assertionEnabled && !predicate())
-        throw new AssertionError
-
     "アサーションのための制御構造の実装" in {
+      // アサーション関数の定義
+      var assertionEnabled = true
+      def myAssert(predicate: () => Boolean) =
+        if (assertionEnabled && !predicate())
+          throw new AssertionError
+
       // myAssert(5 > 3) こう書きたい…のだが
       myAssert(() => 5 > 3)
 
@@ -93,13 +93,13 @@ class UserDefinitionControlStructureTest extends Specification {
       (myAssert(() => 5 < 3)) must throwA[AssertionError]
     }
 
-    // 名前渡しパラメータを使ってのアサーション構文
-    def byNameAssert(predicate: => Boolean) =
-      if (assertionEnabled && !predicate)
-        throw new AssertionError
-
     "名前渡しパラメーターを使ったアサーションのための制御構造" in {
-      // myAssert(5 > 3) こう書きたい…のだが
+      // 名前渡しパラメータを使ってのアサーション構文
+      var assertionEnabled = true
+      def byNameAssert(predicate: => Boolean) =
+        if (assertionEnabled && !predicate)
+          throw new AssertionError
+
       byNameAssert(5 > 3)
 
       // フラグOFF中
@@ -111,5 +111,30 @@ class UserDefinitionControlStructureTest extends Specification {
       (byNameAssert(5 < 3)) must throwA[AssertionError]
     }
 
+
+    "関数でなく計算後の真偽値をそのまま渡すアサーションと関数を渡す奴との違い" in {
+      // 関数でなく計算後の真偽値をそのまま渡す形のアサート関数
+      var assertionEnabled = false
+      def boolAssert(predicate: Boolean) =
+        if (assertionEnabled && !predicate)
+          throw new AssertionError
+
+      // 前の関数
+      def byNameAssert(predicate: => Boolean) =
+        if (assertionEnabled && !predicate)
+          throw new AssertionError
+
+      // フラグOFF中
+      // 関数渡しのほうはフラグOFFなので関数の実行されないのでエラー無く終わる
+      byNameAssert(1 / 0 == 0)
+      // 値渡しのほうは、関数へ行く前にエラーが起こる
+      (boolAssert(1 / 0 == 0)) must throwA[ArithmeticException]
+
+      // おまけ
+      assertionEnabled = true
+      assertionEnabled must equalTo(true)
+    }
+
   }
+
 }

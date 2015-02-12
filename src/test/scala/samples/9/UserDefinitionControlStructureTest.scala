@@ -11,14 +11,14 @@ class UserDefinitionControlStructureTest extends Specification {
     "自分で定義した構造" in {
 
       // 指定された関数を二回呼ぶ関数
-      def twice(op: Double => Double , x: Double) = op(op(x))
+      def twice(op: Double => Double, x: Double) = op(op(x))
 
       val actual = twice(_ + 1, 5)
 
       actual must equalTo(7)
 
     }
-    
+
     val test_file_name = "test.txt"
     val test_file_text = "Test text."
 
@@ -72,4 +72,19 @@ class UserDefinitionControlStructureTest extends Specification {
 
   }
 
+  "名前渡しパラメーター(9.5)" should {
+
+    var assertionEnabled = true
+
+    def myAssert(predicate: () => Boolean) =
+      if (assertionEnabled && !predicate())
+        throw new AssertionError
+
+    "アサーションのための制御構造の実装" in {
+      // フラグONで偽のもの
+      assertionEnabled = true
+      (myAssert(() => 5 < 3)) must throwA[AssertionError]
+    }
+
+  }
 }

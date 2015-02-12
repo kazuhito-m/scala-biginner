@@ -84,6 +84,10 @@ class UserDefinitionControlStructureTest extends Specification {
       // myAssert(5 > 3) こう書きたい…のだが
       myAssert(() => 5 > 3)
 
+      // フラグOFF中
+      assertionEnabled = false
+      myAssert(() => 5 < 3)
+
       // フラグONで偽のもの
       assertionEnabled = true
       (myAssert(() => 5 < 3)) must throwA[AssertionError]

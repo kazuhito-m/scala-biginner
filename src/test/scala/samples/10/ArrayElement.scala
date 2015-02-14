@@ -1,9 +1,8 @@
 package samples
 
-abstract class ArrayElement(conts : Array[String]) extends Element {
+abstract class ArrayElement(conts: Array[String]) extends Element {
 
-  def contents: Array[String] = contents
-  
+  def contents: Array[String] = conts
 
 }
 

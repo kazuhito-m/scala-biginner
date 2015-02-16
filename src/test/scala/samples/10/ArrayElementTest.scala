@@ -18,4 +18,11 @@ class ArrayElementTest extends Specification {
 
   }
 
+  "メソッドとフィールドのオーバーライド(10.5)" should {
+    "フィールドでメソッドをオーバーライドしてみる" in {
+      val e: Element = new ArrayElement2(Array("Hello"))
+      e.width must equalTo(5)
+    }
+  }
+
 }

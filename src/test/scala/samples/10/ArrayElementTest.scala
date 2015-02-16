@@ -32,4 +32,11 @@ class ArrayElementTest extends Specification {
     }
   }
 
+  "スーパークラスコンストラクターの呼び出し(10.7)" should {
+    "オーバーライドされた別型の引数のコンストラクタを呼び出してインスタンス化" in {
+      val e: Element = new LineElement("Hello")
+      e.width must equalTo(5)
+    }
+  }
+
 }

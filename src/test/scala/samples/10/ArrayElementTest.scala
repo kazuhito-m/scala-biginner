@@ -25,4 +25,11 @@ class ArrayElementTest extends Specification {
     }
   }
 
+  "パラメーターフィールドの定義(10.6)" should {
+    "コンストラクタとフィールドとなんやかんやを一緒にした略記法で同じの書く" in {
+      val e: Element = new ArrayElement3(Array("Hello"))
+      e.width must equalTo(5)
+    }
+  }
+
 }

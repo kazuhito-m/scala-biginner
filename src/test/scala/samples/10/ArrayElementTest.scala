@@ -41,7 +41,7 @@ class ArrayElementTest extends Specification {
 
   "多相性と動的束縛(10.9)" should {
     "指定した文字を敷き詰めるクラスを定義する" in {
-      val e: Element = new UniformElement('x',5,3)
+      val e: Element = new UniformElement('x', 5, 3)
       val actual = e.contents
       actual.length must equalTo(3)
       actual(0) must equalTo("xxxxx")

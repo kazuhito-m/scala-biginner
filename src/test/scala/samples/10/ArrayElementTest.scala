@@ -50,4 +50,20 @@ class ArrayElementTest extends Specification {
     }
   }
 
+  "above,beside,toStringの実装(10.12)" should {
+
+    "aboveメソッドの実装" in {
+
+      val e1: Element = new ArrayElement(Array("Test" , "TestTest"))
+      val e2: Element = new ArrayElement(Array("Test2" , "TestTestTest"))
+
+      val actual = e1.above(e2)
+
+      actual.height must equalTo(4)
+      actual.width must equalTo(4)
+
+    }
+
+  }
+
 }

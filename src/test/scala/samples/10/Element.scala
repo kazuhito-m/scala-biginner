@@ -12,5 +12,12 @@ abstract class Element {
   def above(that: Element) =
     new ArrayElement(this.contents ++ that.contents)
 
+  def beside(that: Element) = {
+    val contents = new Array[String](this.contents.length)
+    for (i <- 0 until this.contents.length)
+      contents(i) = this.contents(i) + that.contents(i)
+    new ArrayElement(contents)
+  }
+
 }
 

@@ -64,6 +64,18 @@ class ArrayElementTest extends Specification {
 
     }
 
+    "besideメソッドの実装" in {
+
+      val e1: Element = new ArrayElement(Array("Test" , "TestTest"))
+      val e2: Element = new ArrayElement(Array("Test2" , "TestTestTest"))
+
+      val actual = e1.beside(e2)
+
+      actual.height must equalTo(2)
+      actual.width must equalTo(9)
+
+    }
+
   }
 
 }

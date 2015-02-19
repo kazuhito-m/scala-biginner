@@ -20,5 +20,6 @@ abstract class Element {
     )
   }
 
+  override def toString = contents mkString "\n"
 }
 

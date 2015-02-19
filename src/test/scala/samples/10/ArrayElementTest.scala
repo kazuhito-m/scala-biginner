@@ -54,8 +54,8 @@ class ArrayElementTest extends Specification {
 
     "aboveメソッドの実装" in {
 
-      val e1: Element = new ArrayElement(Array("Test" , "TestTest"))
-      val e2: Element = new ArrayElement(Array("Test2" , "TestTestTest"))
+      val e1: Element = new ArrayElement(Array("Test", "TestTest"))
+      val e2: Element = new ArrayElement(Array("Test2", "TestTestTest"))
 
       val actual = e1.above(e2)
 
@@ -66,14 +66,19 @@ class ArrayElementTest extends Specification {
 
     "besideメソッドの実装" in {
 
-      val e1: Element = new ArrayElement(Array("Test" , "TestTest"))
-      val e2: Element = new ArrayElement(Array("Test2" , "TestTestTest"))
+      val e1: Element = new ArrayElement(Array("Test", "TestTest"))
+      val e2: Element = new ArrayElement(Array("Test2", "TestTestTest"))
 
       val actual = e1.beside(e2)
 
       actual.height must equalTo(2)
       actual.width must equalTo(9)
 
+    }
+
+    "toStringオーバーライドメソッドの実装" in {
+      val e: Element = new ArrayElement(Array("a", "b", "c"))
+      e.toString must equalTo("a\nb\nc")
     }
 
   }

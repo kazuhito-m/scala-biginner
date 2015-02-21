@@ -93,6 +93,9 @@ class ArrayElementTest extends Specification {
       val e2:Element = Element.elem('x', 3, 4)
       e2 must haveClass[UniformElement]
 
+      val e3:Element = Element.elem("テストですよーん")
+      e3 must haveClass[LineElement]
+
     }
 
   }

@@ -1,6 +1,5 @@
 package samples
 
-
 abstract class Element {
 
   def contents: Array[String]
@@ -10,10 +9,10 @@ abstract class Element {
   def width: Int = if (height == 0) 0 else contents(0).length
 
   def above(that: Element) =
-    new ArrayElement(this.contents ++ that.contents)
+    Element.elem(this.contents ++ that.contents)
 
   def beside(that: Element) = {
-    new ArrayElement(
+    Element.elem(
       for (
         (line1, line2) <- this.contents zip that.contents
       ) yield line1 + line2
@@ -31,6 +30,6 @@ object Element {
   def elem(chr: Char, width: Int, height: Int): Element = new UniformElement(chr, width, height)
 
   def elem(line: String): Element = new LineElement(line)
-  
+
 }
 

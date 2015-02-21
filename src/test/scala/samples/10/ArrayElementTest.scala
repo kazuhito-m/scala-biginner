@@ -107,7 +107,10 @@ class ArrayElementTest extends Specification {
       actual.width must equalTo(6)
     }
 
-
+    "heightの値を正しく判定する" in {
+      val actual = new ArrayElement(Array("one","two")) above new ArrayElement(Array("one"))
+      actual.height must equalTo(4)
+    }
 
   }
 

@@ -83,4 +83,15 @@ class ArrayElementTest extends Specification {
 
   }
 
+  "ファクトリーオブジェクトの定義(10.13)" should {
+
+    "ファクトリメソッド毎の型の確認" in {
+
+      val e1:Element = Element.elem(Array("Test", "TestTest"))
+      e1 must haveClass[ArrayElement]
+
+    }
+    
+  }
+
 }

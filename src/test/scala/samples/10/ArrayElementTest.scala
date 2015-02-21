@@ -60,7 +60,7 @@ class ArrayElementTest extends Specification {
       val actual = e1.above(e2)
 
       actual.height must equalTo(4)
-      actual.width must equalTo(4)
+      actual.width must equalTo(5)
 
     }
 
@@ -101,10 +101,14 @@ class ArrayElementTest extends Specification {
   }
 
   "高さを調整するheigten、幅を調整するwiden(10.14)" should {
+
     "widthの値を正しく判定する" in {
       val actual = new ArrayElement(Array("hello")) above new ArrayElement(Array("world!"))
       actual.width must equalTo(6)
     }
+
+
+
   }
 
 }

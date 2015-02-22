@@ -87,13 +87,13 @@ class ArrayElementTest extends Specification {
 
     "ファクトリメソッド毎の型の確認" in {
 
-      val e1:Element = Element.elem(Array("Test", "TestTest"))
+      val e1: Element = Element.elem(Array("Test", "TestTest"))
       e1 must haveClass[ArrayElement]
 
-      val e2:Element = Element.elem('x', 3, 4)
+      val e2: Element = Element.elem('x', 3, 4)
       e2 must haveClass[UniformElement]
 
-      val e3:Element = Element.elem("テストですよーん")
+      val e3: Element = Element.elem("テストですよーん")
       e3 must haveClass[LineElement]
 
     }
@@ -108,10 +108,18 @@ class ArrayElementTest extends Specification {
     }
 
     "heightの値を正しく判定する" in {
-      val actual = new ArrayElement(Array("one","two")) above new ArrayElement(Array("one"))
+      val actual = new ArrayElement(Array("one", "two")) above new ArrayElement(Array("one"))
       actual.height must equalTo(4)
     }
 
+  }
+
+
+  "レイアウト要素全てを組み合わせて利用するアプリケーション" should {
+    "渦巻きを表現する" in {
+      val actual = Spiral.spiral(11, 0)
+      actual.toString must equalTo("+----------\n|          \n| +------+ \n| |      | \n| | +--+ | \n| | |  | | \n| | ++ | | \n| |    | | \n| +----+ | \n|        | \n+--------+ ")
+    }
   }
 
 }

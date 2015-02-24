@@ -1,7 +1,6 @@
 package samples
 
 import org.specs2.mutable.Specification
-import scala.collection.JavaConverters._
 
 class ScalaStractureTest extends Specification {
 

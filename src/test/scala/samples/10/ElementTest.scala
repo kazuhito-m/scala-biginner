@@ -2,7 +2,7 @@ package samples
 
 import org.specs2.mutable.Specification
 
-class ArrayElementTest extends Specification {
+class ElementTest extends Specification {
 
   "クラスの拡張(10.4)" should {
 
@@ -109,7 +109,7 @@ class ArrayElementTest extends Specification {
 
     "heightの値を正しく判定する" in {
       val actual = new ArrayElement(Array("one", "two")) above new ArrayElement(Array("one"))
-      actual.height must equalTo(4)
+      actual.height must equalTo(3)
     }
 
   }

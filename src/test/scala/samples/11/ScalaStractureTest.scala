@@ -23,4 +23,16 @@ class ScalaStractureTest extends Specification {
 
   }
 
+  "プリミティブ型の実装方法(11.2)" should {
+    "Scalaではプリミティブとオブジェクトは極力意識しない" in {
+
+      // Int型指定で等式
+      def isEqualInt(x: Int, y: Int) = x == y
+
+      isEqualInt(421, 421) must equalTo(true)
+
+
+    }
+  }
+
 }

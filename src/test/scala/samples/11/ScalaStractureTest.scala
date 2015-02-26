@@ -63,4 +63,21 @@ class ScalaStractureTest extends Specification {
 
   }
 
+  "最下位(bottom)の二つの型(11.3)" should {
+    "Nothingの使い所" in {
+
+      // NothingならIF文の判定に、例えばIntだとしても突っ込める
+      def error(message: String) : Nothing = throw new RuntimeException(message)
+
+      def divide(x: Int,  y: Int): Int =
+        if (y != 0) x / y
+        else error("can't divide by zero")
+
+      // 上記のコードは、実際に動く
+      divide(4,2) must equalTo(2)
+      (divide(4,0)) must throwA[RuntimeException]
+
+    }
+  }
+
 }

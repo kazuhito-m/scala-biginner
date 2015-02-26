@@ -24,6 +24,7 @@ class ScalaStractureTest extends Specification {
   }
 
   "プリミティブ型の実装方法(11.2)" should {
+
     "Scalaではプリミティブとオブジェクトは極力意識しない" in {
 
       // Int型指定で等式
@@ -37,6 +38,16 @@ class ScalaStractureTest extends Specification {
       isEqual(421, 421) must equalTo(true)
 
     }
+
+    "文字列型の==比較も意味ベースで比較" in {
+
+      val x = "abcd".substring(2)
+      val y = "abcd".substring(2)
+
+      x == y must equalTo(true)
+
+    }
+
   }
 
 }

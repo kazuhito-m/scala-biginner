@@ -31,6 +31,10 @@ class ScalaStractureTest extends Specification {
 
       isEqualInt(421, 421) must equalTo(true)
 
+      // Int型以外で等式
+      def isEqual(x: Any, y: Any) = x == y
+
+      isEqual(421, 421) must equalTo(true)
 
     }
   }

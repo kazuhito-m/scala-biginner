@@ -42,9 +42,22 @@ class ScalaStractureTest extends Specification {
     "文字列型の==比較も意味ベースで比較" in {
 
       val x = "abcd".substring(2)
-      val y = "abcd".substring(2)
+      val y = "efcd".substring(2)
 
       x == y must equalTo(true)
+
+    }
+
+    "参照を比較するメソッド" in {
+
+      val x = new String("abc")
+      val y = new String("abc")
+
+      x == y must equalTo(true)
+
+      x eq y must equalTo(false)
+
+      x ne y must equalTo(true)
 
     }
 

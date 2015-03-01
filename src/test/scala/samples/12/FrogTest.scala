@@ -11,6 +11,10 @@ class FrogTest extends Specification {
       frog.philosophize()
       // 勿論「自身クラスの特徴」も保持している
       frog.toString must equalTo("green")
+      // 別の型にキャスト
+      val phil: Philosophical = frog
+      // 同じメソッドをよんでも「インスタンス側の性質」で呼び出される。
+      phil.toString must equalTo("green")
     }
   }
 

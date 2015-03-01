@@ -20,6 +20,12 @@ class FrogTest extends Specification {
       phil.toString must equalTo("green")
     }
 
+    "ミックスインしたトレイトのメソッドもオーバーライド出来る" in {
+      val phrog = new Flog2
+      phrog.toString must equalTo("green")
+      phrog.say() must equalTo("It ain't easy being green!")
+    }
+
   }
 
 }

@@ -13,6 +13,8 @@ class FrogTest extends Specification {
       frog.toString must equalTo("green")
       // 別の型にキャスト
       val phil: Philosophical = frog
+      // 無論継承元であるこの型のメソッドは呼べるのは当たり前。
+      phil.philosophize()
       // 同じメソッドをよんでも「インスタンス側の性質」で呼び出される。
       phil.toString must equalTo("green")
     }

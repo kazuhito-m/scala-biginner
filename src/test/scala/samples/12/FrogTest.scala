@@ -7,7 +7,7 @@ class FrogTest extends Specification {
   "トレイトの仕組み(12.1)" should {
 
     "トレイトのExtends時の動き" in {
-      val frog = new Flog
+      val frog = new Frog
       // 継承元トレイトのメソッドも呼べるし
       frog.philosophize()
       // 勿論「自身クラスの特徴」も保持している
@@ -21,7 +21,7 @@ class FrogTest extends Specification {
     }
 
     "ミックスインしたトレイトのメソッドもオーバーライド出来る" in {
-      val phrog = new Flog2
+      val phrog = new Frog2
       phrog.toString must equalTo("green")
       phrog.say() must equalTo("It ain't easy being green!")
     }

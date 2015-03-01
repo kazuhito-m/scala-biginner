@@ -1,5 +1,5 @@
 package samples
 
-class Flog extends Philosophical {
+class Frog extends Philosophical {
   override def toString = "green"
 }

@@ -14,4 +14,3 @@ libraryDependencies ++= Seq(
 )
 
 resolvers ++= Seq("snapshots", "releases").map(Resolver.sonatypeRepo)
-

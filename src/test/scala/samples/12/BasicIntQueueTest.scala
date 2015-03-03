@@ -15,9 +15,9 @@ class BasicIntQueueTest extends Specification {
     }
 
     "積み重ねメソッドを実装するクラスを作成" in {
-      val que
-
-
+      val queue = new MyQueue
+      queue.put(10)
+      queue.get() must equalTo(20)
     }
 
   }

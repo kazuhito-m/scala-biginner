@@ -20,6 +20,12 @@ class BasicIntQueueTest extends Specification {
       queue.get() must equalTo(20)
     }
 
+    "クラス定義時ではなくnewインスタンス作成時にミックスイン" in {
+      val queue = new BasicIntQueue with Doubling
+      queue.put(10)
+      queue.get() must equalTo(20)
+    }
+
   }
 
 }

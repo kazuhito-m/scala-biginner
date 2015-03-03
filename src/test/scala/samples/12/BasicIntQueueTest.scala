@@ -26,6 +26,13 @@ class BasicIntQueueTest extends Specification {
       queue.get() must equalTo(20)
     }
 
+    "積み重ね可能な変更トレイトの二つをミックスイン" in {
+      val queue = (new BasicIntQueue with Incrementing with Filtering)
+      queue.put(-1); queue.put(0); queue.put(1)
+      queue.get() must equalTo(1)
+      queue.get() must equalTo(2)
+    }
+
   }
 
 }

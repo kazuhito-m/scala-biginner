@@ -33,6 +33,14 @@ class BasicIntQueueTest extends Specification {
       queue.get() must equalTo(2)
     }
 
+    "トレイトのミックスインの順序にて結果が変わる確認" in {
+      val queue = (new BasicIntQueue with Filtering with Incrementing)
+      queue.put(-1); queue.put(0); queue.put(1)
+      queue.get() must equalTo(0)
+      queue.get() must equalTo(1)
+      queue.get() must equalTo(2)
+    }
+
   }
 
 }

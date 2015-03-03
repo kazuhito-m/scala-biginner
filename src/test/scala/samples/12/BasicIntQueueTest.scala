@@ -11,6 +11,7 @@ class BasicIntQueueTest extends Specification {
       queue.put(10)
       queue.put(20)
       queue.get() must equalTo(10)
+      queue.get() must equalTo(20)
     }
 
   }

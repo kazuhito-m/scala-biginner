@@ -43,6 +43,14 @@ class BasicIntQueueTest extends Specification {
 
   }
 
+  "Scalaが多重継承ではなくミックスイン合成を選んだ理由" should {
+    "ミックスインを繰り返した時どのトレイトのメソッドが呼ばれるか" in {
+      val q = new BasicIntQueue with Incrementing with Doubling
+      q.put(42) // Bubling.get()の後、Incrementing.get()が呼ばれて、二倍＋１になる。
+      q.get must equalTo(85)
+    }
+  }
+
 }
 
 

@@ -36,6 +36,8 @@ class PackagesAndImportsTest extends Specification {
   "Scalaパッケージは本当に入れ子になる" in {
     val sut = new Booster
     sut.getClass.getPackage.getName must equalTo("samples.bobsrockets.launch")
+    // 内部のクラスはクラスで別パッケージのものを指定。
+    sut.nav.getClass.getPackage.getName must equalTo("samples.bobsrockets.navigation")
   }
 
 }

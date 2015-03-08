@@ -2,6 +2,7 @@ package samples
 
 import org.specs2.mutable.Specification
 import samples.bobsrockets.navigation.Navigator
+import samples.bobsrockets.navigation.tests.NavigatorSuite
 
 package bobsrockets {
   package navigation {
@@ -20,6 +21,8 @@ class PackagesAndImportsTest extends Specification {
     "同じファイルに入れ子にしてパッケージ定義" in {
       val sut = new Navigator
       sut.getClass.getPackage.getName must equalTo("samples.bobsrockets.navigation")
+      val sut2 = new NavigatorSuite
+      sut2.getClass.getPackage.getName must equalTo("samples.bobsrockets.navigation.tests")
     }
 
   }

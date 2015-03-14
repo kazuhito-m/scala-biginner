@@ -54,6 +54,15 @@ class PackagesAndImportsTest extends Specification {
     sut.nav.getClass.getPackage.getName must equalTo("samples.bobsrockets.navigation")
   }
 
+  "インポート(13.2" should {
+    "関数の途中でインポートする例" in {
+      import java.util.regex
+      val hittest = "abcdef"
+      val pat = regex.Pattern.compile("a*b")
+      pat.matcher(hittest).find must equalTo(true)
+    }
+  }
+
 }
 
 

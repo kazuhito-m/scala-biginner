@@ -33,7 +33,6 @@ package launch {
   class Booster3
 }
 
-
 class PackagesAndImportsTest extends Specification {
 
   "パッケージ(13.1)" should {
@@ -64,5 +63,4 @@ class PackagesAndImportsTest extends Specification {
   }
 
 }
-
 

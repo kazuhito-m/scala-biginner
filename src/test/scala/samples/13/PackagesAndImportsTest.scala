@@ -67,8 +67,8 @@ class PackagesAndImportsTest extends Specification {
       import java.lang._
       import scala._
       import Predef._
-      // たとえばJavaLangのStringを使う例。
-      new String("miura") must equalTo("miura")
+      // たとえばJavaLangのCharacterラップクラスを使う例。
+      new Character('a') must equalTo('a')
     }
   }
 

@@ -62,5 +62,15 @@ class PackagesAndImportsTest extends Specification {
     }
   }
 
+  "暗黙のインポート(13.3)" should {
+    "普段インポートされているパッケージをあえてインポート" in {
+      import java.lang._
+      import scala._
+      import Predef._
+      // たとえばJavaLangのStringを使う例。
+      new String("miura") must equalTo("miura")
+    }
+  }
+
 }
 

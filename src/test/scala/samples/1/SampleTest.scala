@@ -1,13 +1,14 @@
 package test.scala
 
 import org.specs2.mutable._
+
 import scala.collection.immutable.HashMap
 
 /**
- * コップ本のサンプルを書く場所。
- * (置くとこないので、ここに仮置き)
- * Created by kazuhito on 15/01/03.
- */
+  * コップ本のサンプルを書く場所。
+  * (置くとこないので、ここに仮置き)
+  * Created by kazuhito on 15/01/03.
+  */
 class SampleTest extends Specification {
 
   "本の序盤に載ってるサンプル" should {
@@ -27,22 +28,26 @@ class SampleTest extends Specification {
     }
 
     "1_3_2_簡潔性の例" in {
-      class MyClass(index: Int, name:String)
+      class MyClass(index: Int, name: String)
       // オブジェクトを作成してみる。
-      val actual = new MyClass(9,"わたしだ")
-      actual must not equalTo(null)
+      val actual = new MyClass(9, "わたしだ")
+      actual must not equalTo (null)
       // private のフィールドはやっぱ取得メソッド装備しないと無理か。
     }
 
     "1_3_3_抽象度の高いコードの例" in {
       val name = "KazuhitoMiura"
       val nameHasUpperCase = name.exists(_.isUpper)
-      nameHasUpperCase must equalTo(true)
+      nameHasUpperCase must equalTo true
+
+      val hasNotUpper = "miurakazuhito"
+      val nameHasUpperCase2 = hasNotUpper.exists(_.isUpper)
+      nameHasUpperCase2 must not equalTo true
     }
 
     "1_3_4_ドキュメント性の例" in {
       // 冗長にもかけるし…
-      val x:HashMap[Int,String] = new HashMap[Int,String]()
+      val x: HashMap[Int, String] = new HashMap[Int, String]()
       // 自明であれば短くもかける。
       val y = new HashMap[Int, String]()
       val z: Map[Int, String] = new HashMap()

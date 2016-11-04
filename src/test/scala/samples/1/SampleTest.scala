@@ -38,7 +38,7 @@ class SampleTest extends Specification {
     "1_3_3_抽象度の高いコードの例" in {
       val name = "KazuhitoMiura"
       val nameHasUpperCase = name.exists(_.isUpper)
-      nameHasUpperCase must equalTo true
+      nameHasUpperCase must equalTo(true)
 
       val hasNotUpper = "miurakazuhito"
       val nameHasUpperCase2 = hasNotUpper.exists(_.isUpper)

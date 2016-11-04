@@ -1,8 +1,8 @@
 import org.specs2.mutable._
 
 /**
- * コップ本のサンプルを書く場所。
- */
+  * コップ本のサンプルを書く場所。
+  */
 class TapleTest extends Specification {
 
   "コップ本「3.2タプルを使う」に載ってるサンプル" should {
@@ -19,9 +19,13 @@ class TapleTest extends Specification {
 
     "イミュータブルな集合の作成・初期化・操作" in {
       var jetSet = Set("Boeing", "Arirbus")
+      val orgHash = jetSet.hashCode()
       jetSet += "Lear"
       println(jetSet.contains("Cessna"))
       jetSet.contains("Cessna") must equalTo(false)
+      // ミュータブルなら、ハッシュコード変わってるんじゃない？
+      val nextHash = jetSet.hashCode()
+      orgHash must not equalTo (nextHash)
     }
 
     "ミュータブルな集合の作成・初期化・操作" in {
